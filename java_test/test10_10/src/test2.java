@@ -1,7 +1,8 @@
-
+import java.util.Scanner;
 public class test2 {
 public static void main(String[] args) {
-	int age = 20;
+	Scanner sc = new Scanner(System.in); //¼üÅÌÊäÈë
+	int age = sc.nextInt();
 	if(age <= 18) {
 		System.out.println("ÉÙÄê");
 	}else if(age <= 28) {
