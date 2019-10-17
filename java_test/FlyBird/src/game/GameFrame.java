@@ -20,7 +20,7 @@ public class GameFrame extends JFrame {
 		//设置关闭窗体的同时停止程序
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//设置标题
-		setTitle("会飞的东仔");
+		setTitle("会飞的小鸟");
 		//设置logol图标img/0.png
 		setIconImage(Tools.getImg("../img/0.png"));
 	}
