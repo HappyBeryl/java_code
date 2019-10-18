@@ -60,8 +60,36 @@ public class Work1_1 {
         }
         return count;
     }
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         int ret = PrintOneNum(15);
         System.out.println(ret);
+    }
+
+
+    public static  int aver(int n, int m) {
+        return  (n&m) + (n^m)>>1;
+    }
+
+    public static void main2(String[] args) {
+        int ret = aver(6,8);
+        System.out.println(ret);
+    }
+
+
+    public static void printNum(int n) {
+        System.out.print("偶数位；");
+        for (int i = 31; i >= 1 ; i-=2) {
+            System.out.print(((n>>i)&1) + " ");
+        }
+        System.out.println();
+        System.out.println("=========");
+        System.out.print("奇数位；");
+        for (int i = 30; i >= 0 ; i-=2) {
+            System.out.print(((n>>i)&1) + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        printNum(8);
     }
 }
