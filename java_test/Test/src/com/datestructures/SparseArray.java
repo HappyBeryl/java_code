@@ -48,8 +48,20 @@ public class SparseArray {
         for (int i = 0; i < sparseArr.length; i++) {
             System.out.printf("%d\t%d\t%d\n",sparseArr[i][0],sparseArr[i][1],sparseArr[i][2]);
         }
-
-
+        System.out.println();
+        //将稀疏数组恢复为原始的二维数组
+        //创建二维数组
+        int chessArray2[][] = new int[sparseArr[0][0]][sparseArr[0][1]];
+        //读取稀疏数组后几行数据，赋给原始二维数组
+        for (int i =1; i < sparseArr.length; i++) {
+            chessArray2[sparseArr[i][0]][sparseArr[i][1]] = sparseArr[i][2];
+        }
+        for (int row[]:chessArray2) {
+            for (int date:row) {
+                System.out.printf("%d\t",date);
+            }
+            System.out.println();
+        }
 
 
     }
