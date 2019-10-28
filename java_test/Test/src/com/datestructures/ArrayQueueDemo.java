@@ -100,6 +100,7 @@ class ArrayQueue {
             System.out.printf("a[%d] = %d\n",i,arr[i]);
         }
     }
+
     public int headQueue() { //显示队列头部
         if (isEmpty()) {
             throw new RuntimeException("队列为空");
