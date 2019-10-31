@@ -11,8 +11,15 @@ public class SingleLinkedListDemo {
         singleLinkedList.addByOrder(person1);
         singleLinkedList.addByOrder(person1);
         singleLinkedList.list();
-
+        //测试修改节点代码
+        PeopleNode newPersonNode = new PeopleNode(2,"小红","红红");
+        singleLinkedList.update(newPersonNode);
+        singleLinkedList.list();
+        //测试删除节点
+        singleLinkedList.del(1);
+        singleLinkedList.list();
     }
+
 }
 
 //定义一个SingleLinkedList 管理英雄
@@ -57,9 +64,60 @@ class SingleLinkedList {
         }
     }
 
+    //修改节点的信息，根据id修改，即id编号不能改
+    public void update(PeopleNode newPeopleNode) {
+        //判断是否为空
+        if(head.next == null) {
+            System.out.println("链表为空");
+            return;
+        }
+        //找到需要修改的节点
+        PeopleNode tmp = head.next;
+        boolean flg = false;
+        while(true) {
+            if (tmp == null) {
+                break; //已经遍历结束
+            }
+            if (tmp.id == newPeopleNode.id) {
+                //找到
+                flg = true;
+                break;
+            }
+            tmp = tmp.next;
+        }
+        if (flg) {
+            tmp.name = newPeopleNode.name;
+            tmp.nickName = newPeopleNode.nickName;
+        } else {
+            System.out.printf("找不到编号 %d 的节点\n",newPeopleNode.id);
+        }
+    }
+
+    //删除节点
+    public void del(int id) {
+        PeopleNode tmp = head;
+        boolean flg = false;
+        while (true) {
+            if (tmp.next == null) {
+                break;
+            }
+            if (tmp.next.id == id) {
+                flg = true; //找到了
+                break;
+            }
+            tmp = tmp.next;
+        }
+        if (flg) {
+            //找到可以删除
+            tmp.next = tmp.next.next;
+        } else {
+            System.out.printf("要删除的%d节点不存在\n",id);
+        }
+    }
+
     //显示链表，遍历
     public void list() {
-        PeopleNode tmp = head;
+        PeopleNode tmp = head.next;
         //判断链表是否为空
         while(true) {
             if (tmp == null) {
@@ -71,6 +129,7 @@ class SingleLinkedList {
         }
     }
 }
+
 //定义一个HeroNode，每个HeroNode就是一个节点
 class PeopleNode {
     public int id;
@@ -93,3 +152,5 @@ class PeopleNode {
                 '}';
     }
 }
+
+

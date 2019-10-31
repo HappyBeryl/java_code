@@ -15,7 +15,7 @@
       <file leaf-file-name="CircleArrayQueue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/datestructures/CircleArrayQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1124">
+            <state relative-caret-position="1520">
               <caret line="86" column="32" selection-start-line="86" selection-start-column="32" selection-end-line="86" selection-end-column="32" />
               <folding>
                 <element signature="e#481#482#0" expanded="true" />
@@ -30,8 +30,8 @@
       <file leaf-file-name="SingleLinkedListDemo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/datestructures/SingleLinkedListDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+            <state relative-caret-position="37">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -73,7 +73,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="15" />
     <option name="y" value="30" />
     <option name="width" value="1890" />
@@ -84,6 +84,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -114,8 +116,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -273,16 +273,16 @@
       <workItem from="1572179085827" duration="6282000" />
       <workItem from="1572270120845" duration="4647000" />
       <workItem from="1572430660086" duration="5291000" />
-      <workItem from="1572441029350" duration="6003000" />
+      <workItem from="1572441029350" duration="6620000" />
+      <workItem from="1572528633009" duration="5563000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59944000" />
+    <option name="totallyTimeSpent" value="66124000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -294,7 +294,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960968" visible="true" weight="0.32993197" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960968" weight="0.32993197" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32993197" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -326,6 +326,26 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/datestructures/CircleArrayQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1634">
+          <caret line="86" column="32" selection-start-line="86" selection-start-column="32" selection-end-line="86" selection-end-column="32" />
+          <folding>
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/datestructures/SingleLinkedListDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/datestructures/CircleArrayQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1634">
@@ -600,12 +620,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/datestructures/Main2.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/datestructures/Main.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/datestructures/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/com/datestructures/CircleArrayQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1124">
+        <state relative-caret-position="1520">
           <caret line="86" column="32" selection-start-line="86" selection-start-column="32" selection-end-line="86" selection-end-column="32" />
           <folding>
             <element signature="e#481#482#0" expanded="true" />
@@ -618,8 +636,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/datestructures/SingleLinkedListDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+        <state relative-caret-position="37">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
         </state>
       </provider>
     </entry>
