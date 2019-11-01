@@ -1,4 +1,4 @@
-package com.datestructures;
+package datestructures;
 
 public class SingleLinkedListDemo {
     public static void main(String[] args) {
@@ -20,6 +20,37 @@ public class SingleLinkedListDemo {
         singleLinkedList.list();
     }
 
+    //获取单链表中节点的个数
+    public static int getLength(PeopleNode head) {
+        if (head.next == null) {
+            System.out.println("链表为空");
+        }
+        PeopleNode tmp = head.next;  //需求不统计头节点数
+        int count = 0;
+        while (tmp != null) {
+            count++;
+            tmp = tmp.next;
+        }
+        return count;
+    }
+
+    //查找单链表中的倒数第k个节点
+    public static PeopleNode findLastIndexNode(PeopleNode head, int index) {
+        if (head.next == null) {
+            return null; //链表为空，找不到
+        }
+        int length = getLength(head);
+        if (index <= 0 || index > length) {
+            return null;
+        }
+        PeopleNode tmp = head.next;
+        for (int i = 0; i < length-index; i++) { //3 倒数第一个 遍历3-1=2次
+            tmp = tmp.next;
+        }
+        return tmp;
+    }
+
+    //将单链表反转
     public static void reverseList(PeopleNode head) {
         //如果当前链表为空或者只有一个节点，直接返回
         if (head.next == null || head.next.next == null) {
@@ -36,6 +67,9 @@ public class SingleLinkedListDemo {
         }
         head.next = reverseNode.next;
     }
+
+    //从尾到头打印单链表
+
 
 
 }
