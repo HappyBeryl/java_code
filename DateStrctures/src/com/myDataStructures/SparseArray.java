@@ -1,4 +1,4 @@
-package datestructures;
+package com.myDataStructures;
 
 public class SparseArray {
     public static void main(String[] args) {
