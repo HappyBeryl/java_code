@@ -13,7 +13,7 @@ class ListNode {
 //定义单链表
 class MySingleList {
     public ListNode head; //标志头
-    public MySingleList(int data) {
+    public MySingleList() {
         this.head = null;
     }
 
@@ -139,7 +139,37 @@ public void addFirst(int data) {
         }
     }
 
+    //删除所有值为key的节点
+    public void removeAllKey(int key) {
+        ListNode prev = this.head;
+        ListNode cur = this.head.next;
+        while(cur != null) {
+            if (prev.next.data == key) {
+                prev.next = cur.next;
+                cur = cur.next;
+            } else {
+                prev = cur;
+                cur = cur.next;
+            }
+        }
+        //处理第一个节点--最后处理
+        if (head.data == key) {
+            head = head.next;
+        }
+    }
 
+    //清空单链表1
+    public void clear1() {
+        this.head = null;
+    }
+
+    //清空单链表2
+    public void clear() {
+        while (this.head.next != null) {
+            ListNode tmp = this.head.next;
+            this.head.next = tmp.next;
+        }
+    }
 
 
 
