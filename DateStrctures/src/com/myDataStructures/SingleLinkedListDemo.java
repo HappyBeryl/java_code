@@ -1,5 +1,7 @@
 package com.myDataStructures;
 
+import java.util.Stack;
+
 public class SingleLinkedListDemo {
     public static void main(String[] args) {
         PeopleNode person1 = new PeopleNode(1,"白琼","beryl");
@@ -69,7 +71,22 @@ public class SingleLinkedListDemo {
     }
 
     //从尾到头打印单链表
-
+    public static void reversePrint(PeopleNode head) {
+        if (head.next == null) {
+            return;
+        }
+        Stack stack = new Stack<PeopleNode>();
+        PeopleNode cur = head.next;
+        //压栈
+        while(cur != null) {
+            stack.push(cur);
+            cur = cur.next;
+        }
+        //出栈
+        while (stack.size() > 0) {
+            System.out.println(stack.pop());
+        }
+    }
 
 
 }
