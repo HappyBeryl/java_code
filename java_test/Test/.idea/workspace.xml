@@ -153,18 +153,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestChange">
-    <configuration name="CircleArrayQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.datestructures.CircleArrayQueue" />
-      <module name="Test" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.datestructures.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
+  <component name="RunManager" selected="Application.TestSingleList">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.test.Main" />
       <module name="Test" />
@@ -200,6 +189,17 @@
     </configuration>
     <configuration name="TestChange" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.test.TestChange" />
+      <module name="Test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="TestSingleList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.test.TestSingleList" />
       <module name="Test" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -251,19 +251,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.CircleArrayQueue" />
       <item itemvalue="Application.Main2" />
       <item itemvalue="Application.SingleLinkedListDemo" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.TestChange" />
+      <item itemvalue="Application.TestSingleList" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestSingleList" />
         <item itemvalue="Application.TestChange" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.SingleLinkedListDemo" />
         <item itemvalue="Application.Main2" />
-        <item itemvalue="Application.CircleArrayQueue" />
       </list>
     </recent_temporary>
   </component>
