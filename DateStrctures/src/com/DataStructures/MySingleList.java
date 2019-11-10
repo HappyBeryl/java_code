@@ -11,7 +11,8 @@ class ListNode {
 }
 
 //定义单链表
-class MySingleList {
+class
+MySingleList {
     public ListNode head; //标志头
     public MySingleList() {
         this.head = null;
@@ -256,9 +257,167 @@ public void addFirst(int data) {
         while(fast.next != null) {
             fast = fast.next;
             slow = slow.next;
+
         }
         return slow;
     }
+
+    //以x为基准分割链表
+//    public ListNode partition(int x){
+//        ListNode bs = null;
+//        ListNode be = null;
+//        ListNode as = null;
+//        ListNode ae = null;
+//        ListNode cur = this.head;
+//        while (cur != null) {
+//            if(cur.data < x) {
+//                //是不是第一次插入
+//                if(bs == null) {
+//                    bs = cur;
+//                    be = cur;
+//                }else {
+//                    be.next = cur;
+//                    be = be.next;
+//                }
+//            }else {
+//                //是不是第一次插入
+//                if(as == null) {
+//                    as = cur;
+//                    ae = cur;
+//                }else {
+//                    ae.next = cur;
+//                    ae = ae.next;
+//                }
+//            }
+//            cur = cur.next;
+//        }
+//        //第一个区间没有数据
+//        if (bs == null) {
+//            return as;
+//        }
+//        be.next = as;
+//        //把最后一个节点的next置空，否则会造成死循环（此时尾节点不为空）
+//        if (as != null) {
+//            ae.next = null;
+//        }
+//        return bs;
+//    }
+
+    //以x为基准分割链表
+    public ListNode partition(int x){
+        ListNode bs = null;
+        ListNode be = null;
+        ListNode as = null;
+        ListNode ae = null;
+        ListNode cur = this.head;
+        while (cur != null) {
+            if (cur.data < x) {
+                //判断是否为第一次加入
+                if (bs == null) {
+                    bs = cur;
+                    be = cur;
+                } else {
+                    be.next = cur;
+                    be = be.next;
+                }
+            } else {
+                //判断是否为第一次加入
+                if (as == null) {
+                    as = cur;
+                    ae = cur;
+                } else {
+                    ae.next = cur;
+                    ae = ae.next;
+                }
+            }
+            cur = cur.next;
+        }
+        //判断是否k是否小于所以节点
+        if (bs == null) {
+            return as;
+        }
+        if (as != null) {
+            ae.next = null;
+        }
+        if (be.next != null) {
+            be.next = as;
+        }
+        return bs;
+    }
+
+//删除重复的节点
+    public ListNode deleteDuplication(){
+        ListNode cur = this.head;
+        ListNode newHead = new ListNode(-1);
+        ListNode tmp = newHead;
+        while (cur != null) {
+            //重复的节点
+            if(cur.next != null && cur.data == cur.next.data) {
+                //每一次都需要判断cur.next
+                while (cur.next != null && cur.data == cur.next.data) {
+                    cur = cur.next;
+                }
+                cur = cur.next;
+            } else {
+                tmp.next = cur;
+                tmp = tmp.next;
+                cur = cur.next;
+            }
+        }
+        //最后一个节点如果也是重复的，需要将tmp.next置为空
+        tmp.next = null;
+        return newHead.next;
+    }
+
+    //单链表判断回文数
+    public boolean chkPalindrome() {
+        //为空
+        if (this.head == null) {
+            return false;
+        }
+        //一个数
+        if (head.next == null) {
+            return true;
+        }
+        //1、找到单链表的中间节点
+        ListNode fast = this.head;
+        ListNode slow = this.head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        //2、反转单链表
+        ListNode cur = slow.next;
+        while (cur != null) {
+            ListNode curNext = cur.next;
+            cur.next = slow;
+            slow = cur;
+            cur = curNext;
+        }
+        //3、fast/slow往前    head往后走
+        while (this.head != slow) {
+            if (this.head.data != slow.data) {
+                return false;
+            }
+            //偶数
+            if (this.head.next == slow) {
+                return true;
+            }
+            this.head = this.head.next;
+            slow = slow.next;
+        }
+        return true;
+    }
+
+//    //判断入环的第一个节点
+//    public ListNode detectCycle() {
+//        ListNode fast = this.head;
+//        ListNode slow = this.head;
+//
+//
+//    }
+
+
 
 
 
