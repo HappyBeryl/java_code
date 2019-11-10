@@ -15,7 +15,7 @@ public class TestMySingleList {
         mySingleList.disPlay();
 //        ListNode node = mySingleList.midNode();
 //        System.out.println(node.data);
-        System.out.println(mySingleList.findKthToTail1(2).data);
+ //       System.out.println(mySingleList.findKthToTail1(2).data);
 
     }
 

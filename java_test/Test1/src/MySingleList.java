@@ -155,9 +155,9 @@ class MySingleList {
             cur.next = prev;
             prev = cur;
             cur = curNext;
+
         }
         return newHead;
-    }
 
     // 显示2
         public void disPlay2(ListNode newHead) {
