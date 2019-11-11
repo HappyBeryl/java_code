@@ -1,5 +1,7 @@
 package com.DataStructures;
 
+import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
+
 //定义节点
 class ListNode {
     public int data;
@@ -263,47 +265,6 @@ public void addFirst(int data) {
     }
 
     //以x为基准分割链表
-//    public ListNode partition(int x){
-//        ListNode bs = null;
-//        ListNode be = null;
-//        ListNode as = null;
-//        ListNode ae = null;
-//        ListNode cur = this.head;
-//        while (cur != null) {
-//            if(cur.data < x) {
-//                //是不是第一次插入
-//                if(bs == null) {
-//                    bs = cur;
-//                    be = cur;
-//                }else {
-//                    be.next = cur;
-//                    be = be.next;
-//                }
-//            }else {
-//                //是不是第一次插入
-//                if(as == null) {
-//                    as = cur;
-//                    ae = cur;
-//                }else {
-//                    ae.next = cur;
-//                    ae = ae.next;
-//                }
-//            }
-//            cur = cur.next;
-//        }
-//        //第一个区间没有数据
-//        if (bs == null) {
-//            return as;
-//        }
-//        be.next = as;
-//        //把最后一个节点的next置空，否则会造成死循环（此时尾节点不为空）
-//        if (as != null) {
-//            ae.next = null;
-//        }
-//        return bs;
-//    }
-
-    //以x为基准分割链表
     public ListNode partition(int x){
         ListNode bs = null;
         ListNode be = null;
@@ -311,39 +272,40 @@ public void addFirst(int data) {
         ListNode ae = null;
         ListNode cur = this.head;
         while (cur != null) {
-            if (cur.data < x) {
-                //判断是否为第一次加入
-                if (bs == null) {
+            if(cur.data < x) {
+                //是不是第一次插入
+                if(bs == null) {
                     bs = cur;
                     be = cur;
-                } else {
+                }else {
                     be.next = cur;
                     be = be.next;
                 }
-            } else {
-                //判断是否为第一次加入
-                if (as == null) {
+            }else {
+                //是不是第一次插入
+                if(as == null) {
                     as = cur;
                     ae = cur;
-                } else {
+                }else {
                     ae.next = cur;
                     ae = ae.next;
                 }
             }
             cur = cur.next;
         }
-        //判断是否k是否小于所以节点
+        //第一个区间没有数据
         if (bs == null) {
             return as;
         }
+        be.next = as;
+        //把最后一个节点的next置空，否则会造成死循环（此时尾节点不为空）
         if (as != null) {
             ae.next = null;
         }
-        if (be.next != null) {
-            be.next = as;
-        }
         return bs;
     }
+
+
 
 //删除重复的节点
     public ListNode deleteDuplication(){
@@ -368,6 +330,8 @@ public void addFirst(int data) {
         tmp.next = null;
         return newHead.next;
     }
+
+
 
     //单链表判断回文数
     public boolean chkPalindrome() {
@@ -409,13 +373,55 @@ public void addFirst(int data) {
         return true;
     }
 
-//    //判断入环的第一个节点
-//    public ListNode detectCycle() {
-//        ListNode fast = this.head;
-//        ListNode slow = this.head;
-//
-//
-//    }
+
+    //创造一个环
+    public void creteLoop() {
+        ListNode cur = this.head;
+        while (cur.next != null) {
+            cur = cur.next;
+        }
+        cur.next = this.head.next;
+    }
+
+    //判断链表是否有环
+    public boolean hasCycle() {
+        ListNode fast = this.head;
+        ListNode slow = this.head;
+        while (fast != null && fast.next != null)  {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                break;
+            }
+        }
+        if (fast == null || fast.next ==null) {
+            return false;
+        }
+        return true;
+    }
+
+    //返回链表入环的第一个节点
+    public ListNode detectCycle() {
+        ListNode fast = this.head;
+        ListNode slow = this.head;
+        while (fast != null && fast.next != null)  {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                break;
+            }
+        }
+        if (fast == null || fast.next ==null) {
+            return null;
+        }
+        slow = this.head;
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
+
 
 
 

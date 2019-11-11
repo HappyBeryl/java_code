@@ -15,8 +15,8 @@
       <file leaf-file-name="TestDemo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/DataStructures/TestDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+            <state relative-caret-position="80">
+              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -24,8 +24,8 @@
       <file leaf-file-name="MySingleList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/DataStructures/MySingleList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="343" column="9" lean-forward="true" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
+            <state relative-caret-position="205">
+              <caret line="418" column="17" selection-start-line="418" selection-start-column="17" selection-end-line="418" selection-end-column="17" />
               <folding>
                 <element signature="e#280#281#0" expanded="true" />
                 <element signature="e#312#313#0" expanded="true" />
@@ -73,18 +73,16 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="15" />
-    <option name="y" value="30" />
-    <option name="width" value="1890" />
-    <option name="height" value="930" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="980" />
+    <option name="height" value="521" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -110,19 +108,13 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="DataStructures" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="DateStrctures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DateStrctures" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="DataStructures" type="462c0819:PsiDirectoryNode" />
-              <item name="MySingleList.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -285,16 +277,17 @@
       <workItem from="1573296418416" duration="4608000" />
       <workItem from="1573349614165" duration="9062000" />
       <workItem from="1573368123878" duration="5371000" />
-      <workItem from="1573395070112" duration="3611000" />
+      <workItem from="1573395070112" duration="3988000" />
+      <workItem from="1573447834681" duration="596000" />
+      <workItem from="1573465940588" duration="8293000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90780000" />
+    <option name="totallyTimeSpent" value="100046000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -302,11 +295,11 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5003903" side_tool="true" visible="true" weight="0.28911564" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50117093" side_tool="true" visible="true" weight="0.28911564" />
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960968" visible="true" weight="0.28911564" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49882904" weight="0.28911564" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
@@ -334,7 +327,23 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="18" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/DataStructures/TestDemo.java</url>
+          <line>3</line>
+          <properties class="com.DataStructures.TestDemo" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/DataStructures/TestDemo.java</url>
+          <line>2</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="20" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -613,15 +622,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DataStructures/TestDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        <state relative-caret-position="80">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DataStructures/MySingleList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="343" column="9" lean-forward="true" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
+        <state relative-caret-position="205">
+          <caret line="418" column="17" selection-start-line="418" selection-start-column="17" selection-end-line="418" selection-end-column="17" />
           <folding>
             <element signature="e#280#281#0" expanded="true" />
             <element signature="e#312#313#0" expanded="true" />
