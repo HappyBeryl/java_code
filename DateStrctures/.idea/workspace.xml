@@ -12,24 +12,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestDemo.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/DataStructures/TestDemo.java">
+      <file leaf-file-name="ArrayStackDemo.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/stack/ArrayStackDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+            <state relative-caret-position="1474">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
               <folding>
-                <element signature="e#1043#1044#0" expanded="true" />
-                <element signature="e#1087#1088#0" expanded="true" />
+                <element signature="e#619#620#0" expanded="true" />
+                <element signature="e#658#659#0" expanded="true" />
+                <element signature="e#699#700#0" expanded="true" />
+                <element signature="e#731#732#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySingleList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DataStructures/MySingleList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6177">
-              <caret line="424" selection-start-line="424" selection-end-line="424" />
             </state>
           </provider>
         </entry>
@@ -58,6 +51,7 @@
         <option value="$PROJECT_DIR$/src/com/myDataStructures/Josepfu.java" />
         <option value="$PROJECT_DIR$/src/com/DataStructures/MySingleList.java" />
         <option value="$PROJECT_DIR$/src/com/DataStructures/TestDemo.java" />
+        <option value="$PROJECT_DIR$/src/com/stack/ArrayStackDemo.java" />
       </list>
     </option>
   </component>
@@ -82,6 +76,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -105,14 +100,13 @@
               <item name="DateStrctures" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="DataStructures" type="462c0819:PsiDirectoryNode" />
+              <item name="stack" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -142,7 +136,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestDemo (1)">
+  <component name="RunManager" selected="Application.ArrayStackDemo">
+    <configuration name="ArrayStackDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.stack.ArrayStackDemo" />
+      <module name="DateStrctures" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="Josepfu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.myDataStructures.Josepfu" />
       <module name="DateStrctures" />
@@ -233,9 +238,11 @@
       <item itemvalue="Application.TestDemo (1)" />
       <item itemvalue="Application.TestDoubleLingkedList" />
       <item itemvalue="Application.Josepfu" />
+      <item itemvalue="Application.ArrayStackDemo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ArrayStackDemo" />
         <item itemvalue="Application.TestDemo (1)" />
         <item itemvalue="Application.Josepfu" />
         <item itemvalue="Application.TestDoubleLingkedList" />
@@ -280,15 +287,16 @@
       <workItem from="1573465940588" duration="8293000" />
       <workItem from="1573546836885" duration="11280000" />
       <workItem from="1573572322707" duration="1384000" />
+      <workItem from="1573622111013" duration="1666000" />
+      <workItem from="1573735062214" duration="4259000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112710000" />
+    <option name="totallyTimeSpent" value="118635000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -296,11 +304,11 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5027322" side_tool="true" visible="true" weight="0.28911564" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5042935" side_tool="true" visible="true" weight="0.28911564" />
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49726775" weight="0.28911564" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49570647" weight="0.28911564" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
@@ -310,8 +318,8 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39965987" />
       <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39965987" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -332,13 +340,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/DataStructures/TestDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DataStructures/MySingleList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4180">
@@ -587,20 +588,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DataStructures/TestDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1748">
+          <caret line="94" column="38" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DataStructures/MySingleList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6177">
+        <state relative-caret-position="327">
           <caret line="424" selection-start-line="424" selection-end-line="424" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DataStructures/TestDemo.java">
+    <entry file="file://$PROJECT_DIR$/src/com/stack/ArrayStackDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+        <state relative-caret-position="1474">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
           <folding>
-            <element signature="e#1043#1044#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
           </folding>
         </state>
       </provider>

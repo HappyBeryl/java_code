@@ -27,32 +27,12 @@ public class TestDemo {
         return newHead.next;
     }
 
-//    public static ListNode mergeTwoLists(ListNode headA, ListNode headB) {
-//        ListNode newHead = new ListNode(-1);
-//        ListNode tmp = newHead;
-//        while (headA != null && headB != null) {
-//            if (headA.data < headB.data) {
-//                tmp.next = headA;
-//                headA = headA.next;
-//                tmp = tmp.next;
-//            } else {
-//                tmp.next = headB;
-//                headB = headB.next;
-//                tmp = tmp.next;
-//            }
-//        }
-//        if (headA == null) {
-//            tmp.next = headB;
-//        } else {
-//            tmp.next = headA;
-//        }
-//        return newHead.next;
-//    }
-
+  //  创造一个环
     public static void createCyle(ListNode headA, ListNode headB) {
         headA.next = headB.next.next;
     }
-    //相交
+
+//    //相交
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if(headA == null || headB == null) {
             return null;
@@ -97,6 +77,8 @@ public class TestDemo {
     }
 
 
+
+
     public static void main(String[] args) {
         MySingleList mySingleList = new MySingleList();
         MySingleList mySingleList1 = new MySingleList();
@@ -108,8 +90,9 @@ public class TestDemo {
         mySingleList.addLast(2);
         mySingleList.addLast(4);
         mySingleList.addLast(8);
-        ListNode newHead = mergeTwoLists1(mySingleList.head, mySingleList1.head);
-        mySingleList.disPlay2(newHead);
+        createCyle(mySingleList1.head, mySingleList.head);
+        ListNode node = getIntersectionNode(mySingleList1.head, mySingleList.head);
+        System.out.println(node.data);
 
 
 

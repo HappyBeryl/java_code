@@ -9,4 +9,5 @@ public class TestMySingleList {
         boolean bol = mySingleList.chkPalindrome();
         System.out.println(bol);
     }
+
 }
