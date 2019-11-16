@@ -214,38 +214,133 @@ class SingleList {
         }
         ListNode slow = this.head;
         ListNode fast = this.head;
-        while (fast != null) {
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+
+    //4、输入一个链表，输出链表的倒数第k个节点
+    public ListNode FindKthToTail(int k) {
+        if (k < 0 || this.head == null) {
+            return null;
+        }
+        ListNode fast = this.head;
+        ListNode slow = this.head;
+        for (int i = 0; i < k-1; i++) {
+            if (fast.next == null) {
+                return null;
+            }
+            fast = fast.next;
+        }
+        while (fast.next != null) {
             fast = fast.next;
             slow = slow.next;
         }
         return slow;
     }
 
+
+
+
+    //6、以x为基准分割链表
+    public ListNode partition(int x){
+        ListNode bs = null;
+        ListNode be = null;
+        ListNode as = null;
+        ListNode ae = null;
+        ListNode cur = this.head;
+        while (cur != null) {
+            if (cur.data  < x) {
+                //第一次插入
+                if (bs == null) {
+                    bs = cur;
+                    be = cur;
+                } else {
+                    be.next = cur;
+                    be = be.next;
+                }
+            } else {
+                //第一次插入
+                if (as == null) {
+                    as = cur;
+                    ae = cur;
+                } else {
+                    ae.next = cur;
+                    ae = ae.next;
+                }
+            }
+            cur = cur.next;
+        }
+        if (be.next != null) {
+            be.next = as;
+        }
+        if (bs == null) {
+            return as;
+        }
+        if (as != null) {
+            ae.next = null;
+        }
+        return bs;
+    }
 //
-//    //输入一个链表，输出链表的倒数第k个节点
-//    public ListNode FindKthToTail(int k) {
-//
-//    }
-//
-//    //以x为基准分割链表
-//    public ListNode partition(int x){
-//
-//    }
 //
 //
+   //7、删除重复的节点
+    public ListNode deleteDuplication(){
+        ListNode cur = this.head;
+        ListNode newHead = new ListNode(-1);
+        ListNode tmp = newHead;
+        while (cur != null) {
+            if (cur.data == cur.next.data) {
+                while (cur.next != null && cur.data == cur.next.data) {
+                    cur = cur.next;
+                }
+                cur = cur.next;
+            } else {
+                tmp.next = cur;
+                cur = cur.next;
+                tmp = tmp.next;
+                }
+        }
+        tmp.next = null;
+        return newHead.next;
+    }
 //
-//    //删除重复的节点
-//    public ListNode deleteDuplication(){
-//
-//    }
 //
 //
-//
-//    //单链表判断回文数
-//    public boolean chkPalindrome() {
-//
-//    }
-//
+        //单链表判断回文数
+        public boolean chkPalindrome() {
+            //1、找中间节点
+            ListNode fast = this.head;
+            ListNode slow = this.head;
+            while (fast != null && fast.next != null) {
+                fast = fast.next.next;
+                slow = slow.next;
+            }
+            //2、反转
+            ListNode cur = slow.next;
+            while (cur != null) {
+                ListNode curNext = cur.next;
+               cur.next = slow;
+               slow = cur;
+               cur = curNext;
+            }
+            //3、比较
+            while (this.head != slow) {
+                if (this.head.data != slow.data) {
+                    return false;
+                }
+                if (this.head.next == slow) {
+                    return true;
+                }
+                this.head = this.head.next;
+                slow = slow.next;
+            }
+           return true;
+        }
+
 //
 //    //创造一个环
 //    public void creteLoop() {
@@ -256,15 +351,44 @@ class SingleList {
 //        cur.next = this.head.next;
 //    }
 //
-//    //判断链表是否有环
-//    public boolean hasCycle() {
+   //判断链表是否有环
+    public boolean hasCycle() {
+        ListNode fast = this.head;
+        ListNode slow = this.head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                break;
+            }
+        }
+        if (fast == null || fast.next == null) {
+            return false;
+        }
+        return true;
+    }
 //
-//    }
-//
-//    //返回链表入环的第一个节点
-//    public ListNode detectCycle() {
-//
-//    }
+    //返回链表入环的第一个节点
+    public ListNode detectCycle() {
+        ListNode fast = this.head;
+        ListNode slow = this.head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                break;
+            }
+        }
+        if (fast == null || fast.next == null) {
+            return null;
+        }
+        this.head = slow;
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
 
 
 
