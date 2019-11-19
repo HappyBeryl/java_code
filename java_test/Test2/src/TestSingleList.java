@@ -120,6 +120,8 @@ public class TestSingleList {
         singleList.addLast(2);
         singleList.addLast(18);
         singleList.addLast(0);
+        ListNode node = singleList.removeNthFromEnd(5);
+        singleList.disPlay2(node);
        // ListNode node = singleList.partition(2);
         // singleList.disPlay2(node);
 
