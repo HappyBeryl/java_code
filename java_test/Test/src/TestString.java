@@ -1,21 +1,70 @@
-public class TestString {
-    public static void main(String[] args) {
-            String str = "abcdef";//直接赋值
-            String str2 = new String("abcdef");
-            System.out.println(str == str2);//false
-            System.out.println(str.equals(str2));
-            char[] array = {'a','b','c','d'};
-            String str3 = new String(array);
-            System.out.println(str == str3);
-        }
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
-        public static void main1(String[] args) {
-            String str = "abcdef";//直接赋值
-            String str2 = new String("abcdef");
-            char[] array = {'a','b','c','d'};
-            String str3 = new String(array);
-            System.out.println(str);
-            System.out.println(str2);
-            System.out.println(str3);
-        }
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Field;
+import java.util.Arrays;
+
+public class TestString {
+    public static void main1(String[] args) {
+        String str = "abcdef";
+        String str2 = new String("abcdef");
+        char[] array = {'a', 'b', 'c', 'd', 'e', 'f'};
+        String str3 = new String(array);
+        System.out.println(str);
+        System.out.println(str2);
+        System.out.println(str3);
     }
+
+    public static void main2(String[] args) {
+        String str1 = "abcdef";
+        String str2 = new String("abcdef").intern();
+        System.out.println(str1 == str2); //false
+
+        String str3 = "abc" + "def";
+        System.out.println(str1 == str3); //true
+
+        String str4 = "abc" + new String("def");
+        System.out.println(str1 == str4); //false
+
+        String str5 = "abc";
+        String str6 = "def";
+        String str7 = str5+str6;
+        System.out.println(str1 == str7); //false
+
+        String str8 = str5 + new String("def");
+        System.out.println(str1 == str8); //false
+    }
+
+    public static void main3(String[] args) {
+        String str = "hello";
+        str = str + "world";
+        str += "!!";
+        System.out.println(str);
+    }
+
+    public static void main4(String[] args) throws NoSuchFieldException , IllegalAccessException{
+        String str = "Hello"; //new String（）
+        Class cls = String.class; //获取class对象
+        Field field = cls.getDeclaredField("value"); //把str中的value获取到
+        field.setAccessible(true);
+        char[] value = (char[])field.get(str);
+        value[0] = 'h';
+        System.out.println(str);
+    }
+
+    public static void main5(String[] args) {
+        String str = "abcdef";
+        char[] array = str.toCharArray();
+    }
+
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        byte[] bytes = {97, 98, 99, 100};
+        String str = new String(bytes);
+        System.out.println(str);
+
+        String str1 = "白";
+        byte[] bytes1 = str1.getBytes("Unicode");
+        System.out.println(Arrays.toString(bytes1));
+    }
+}
+
