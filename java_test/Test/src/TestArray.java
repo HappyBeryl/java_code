@@ -97,6 +97,8 @@ public class TestArray {
         //匿名数组
         System.out.println(sum(new int[]{1,2,3,4,5}));
 
+
+
     }
 
 

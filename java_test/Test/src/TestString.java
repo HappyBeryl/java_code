@@ -57,7 +57,7 @@ public class TestString {
         char[] array = str.toCharArray();
     }
 
-    public static void main(String[] args) throws UnsupportedEncodingException {
+    public static void main6(String[] args) throws UnsupportedEncodingException {
         byte[] bytes = {97, 98, 99, 100};
         String str = new String(bytes);
         System.out.println(str);
@@ -65,6 +65,32 @@ public class TestString {
         String str1 = "白";
         byte[] bytes1 = str1.getBytes("Unicode");
         System.out.println(Arrays.toString(bytes1));
+    }
+
+    public static void main7(String[] args) {
+        String str = "Hello";
+        String str1 = "hello";
+        System.out.println(str.equals(str1));  //false
+        System.out.println(str.equalsIgnoreCase(str1)); //true
+        System.out.println(str.compareTo(str1)); //-32
+    }
+
+    public static void main(String[] args) {
+        String str = "abcdefg";
+        //是否包含 底层调用indexOf（）函数
+        System.out.println(str.contains("def")); //true
+
+        //查找子串-》返回下标
+        System.out.println(str.indexOf("bcd")); //1
+
+        //从后往前查找子串-》返回下标
+        System.out.println(str.lastIndexOf("cd")); //2
+
+        //判断是否以指定字符串开头
+        System.out.println(str.startsWith("ab")); //true
+
+        //判断是否以指定字符串结束
+        System.out.println(str.endsWith("ef")); //false
     }
 }
 
