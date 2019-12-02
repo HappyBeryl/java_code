@@ -45,7 +45,7 @@ public class TestException {
         System.out.println("hello");
     }
 
-    public static void main(String[] args)  {
+    public static void main15(String[] args)  {
         int a = 10;
         try {
             if (a == 10) {
@@ -55,6 +55,22 @@ public class TestException {
             e.printStackTrace();
         }
     }
+
+    public static void main16(String[] args) {
+        String str = "abc";
+        String str2 = str + "def";
+        System.out.println(str2);
+    }
+
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder("abc");
+        System.out.println(sb);
+        sb.append("java");
+        System.out.println(sb);
+        System.out.println(sb.append("java"));
+    }
+
+
 }
 
 
