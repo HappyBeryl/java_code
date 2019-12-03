@@ -341,16 +341,35 @@ public class TestString {
     public static  boolean rotateString1(String A, String B) {
         StringBuilder sb = new StringBuilder(A);
         sb.append(A);
-        if(A.length() == B.length() && A.contains(B)) {
-            return true;
+        if (A.length() == B.length()) {
+             if (sb.toString().contains(B)) {
+                 return true;
+             } else {
+                 return false;
+             }
+        } else {
+            return false;
         }
-        return false;
     }
-    public static void main(String[] args) {
+    public static void main21(String[] args) {
         String str = "ABCDE";
         String str1 = "BCDEA";
         boolean bol = rotateString1(str,str1);
         System.out.println(bol);
+    }
+
+    public static void main(String[] args) {
+        //abcfdabc --> abcfd
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.next();
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (!stringBuilder.toString().contains(ch + "")) {
+               stringBuilder.append(ch);
+            }
+        }
+        System.out.println(stringBuilder.toString());
     }
 
 
