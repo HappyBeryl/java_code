@@ -358,7 +358,7 @@ public class TestString {
         System.out.println(bol);
     }
 
-    public static void main(String[] args) {
+    public static void main22(String[] args) {
         //abcfdabc --> abcfd
         Scanner scanner = new Scanner(System.in);
         String str = scanner.next();
@@ -370,6 +370,70 @@ public class TestString {
             }
         }
         System.out.println(stringBuilder.toString());
+    }
+
+    public int balancedStringSplit(String s) {
+        char[] array = s.toCharArray();
+        int nums = 0; //记录平衡字符串的数量
+        int count = 0; //count来判断R和L是否数量相同
+        for(int i = 0; i < array.length; i++) {
+            if(array[i] == 'R') {
+                count++;
+            } else {
+                count--;
+            }
+            if(count == 0) {
+                nums++;
+            }
+        }
+        return nums;
+    }
+
+
+    public static void compress1(char[] chars) {
+        StringBuilder stringBuilder = new StringBuilder();
+        char ch = chars[0];
+        int count = 1;
+        for(int j = 1; j < chars.length; j++) {
+            if(ch == chars[j]) {
+                count++;
+            } else {
+                stringBuilder.append(ch).append(count);
+                ch = chars[j];
+                count = 1;
+            }
+        }
+        stringBuilder.append(ch).append(count);
+        System.out.println(stringBuilder.toString());
+    }
+
+    public static int compress(char[] chars) {
+        StringBuilder stringBuilder = new StringBuilder();
+        char ch = chars[0];
+        int count = 1;
+        for(int j = 1; j < chars.length; j++) {
+            if(ch == chars[j]) {
+                count++;
+            } else {
+                if(count == 1) {
+                    stringBuilder.append(ch);
+                    ch = chars[j];
+                    count = 1;
+                } else {
+                    stringBuilder.append(ch).append(count);
+                    ch = chars[j];
+                    count = 1;
+                }
+            }
+        }
+        stringBuilder.append(ch).append(count);
+        System.out.println(stringBuilder.toString());
+        return stringBuilder.toString().length();
+    }
+
+    public static void main(String[] args) {
+        char[] chars = {'a','b','b','b','b','b','b','b','b','b','b','b','b'};
+        System.out.println(compress(chars));
     }
 
 
