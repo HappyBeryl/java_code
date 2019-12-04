@@ -436,6 +436,53 @@ public class TestString {
         System.out.println(compress(chars));
     }
 
+    public static int func4(int n) {
+
+        if(n == 1 || n == 2) {
+            return n;
+        }
+
+        int f1 = 1;
+        int f2 = 2;
+        int f3 = 0;
+        for(int i = 3;i <= n;i++) {
+            f3 = f1+f2;
+            f1 = f2;
+            f2 = f3;
+        }
+        return f3;
+    }
+
+    public static void Hanota(int n,char pos1,char pos2,char pos3) {
+        if(n == 1) {
+            move(pos1,pos3);
+        }
+        else {
+            Hanota(n-1,pos1,pos3,pos2);
+            move(pos1,pos3);
+            Hanota(n-1,pos2,pos1,pos3);
+        }
+    }
+
+    public static int fabonacio2(int n) {
+
+        int f1 = 1;
+        int f2 = 1;
+        int f3 = 1;
+
+        for(int i = 3;i <= n;i++) {
+            f3 = f1+f2;
+            f1 = f2;
+            f2 = f3;
+        }
+        return f3;
+
+    }
+
+    public static void move(char pos1,char pos2) {
+        System.out.println(pos1 + "->" + pos2);
+    }
+
 
 }
 
