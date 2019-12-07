@@ -117,7 +117,7 @@ public class TestArray {
             j--;
         }
     }
-    
+
     public static void eveAfterOdd(int[] array) {
         int i = 0;
         int j = array.length-1;
@@ -262,6 +262,7 @@ public class TestArray {
         int[] array2 = new int[]{1,2,3,4,5};
         //array3数组：默认值为0
         int[] array3 = new int[5];
+        System.out.println();
 
         System.out.println(array[0]);
         //array.length ->数组的一个属性
