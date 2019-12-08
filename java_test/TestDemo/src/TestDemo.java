@@ -79,7 +79,7 @@ public class TestDemo {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main4(String[] args) {
         //int --> Integer 自动装箱
         Integer a = 10;
         //手动装箱
@@ -91,6 +91,14 @@ public class TestDemo {
         int d = a.intValue();
         System.out.println(b); //10
 
+    }
+
+    public static void main(String[] args) {
+        MyArrayList<String> myArrayList = new MyArrayList<>();
+        System.out.println(myArrayList);
+        myArrayList.add("Java");
+//        myArrayList.add(2); //报错
+        String ret = myArrayList.get();
     }
 
 
