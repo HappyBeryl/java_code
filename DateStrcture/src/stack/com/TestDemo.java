@@ -2,6 +2,14 @@ package stack.com;
 
 public class TestDemo {
     public static void main(String[] args) {
+        MyListStack myListStack = new MyListStack();
+        myListStack.push(1);
+        myListStack.push(2);
+        myListStack.push(3);
+        System.out.println(myListStack.pop());
+        System.out.println(myListStack.peek());
+    }
+    public static void main1(String[] args) {
         MyStack<Integer> myStack = new MyStack<>();
         myStack.push(10);
         myStack.push(20);
