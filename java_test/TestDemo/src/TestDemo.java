@@ -102,6 +102,32 @@ public class TestDemo {
     }
 
 
+    public static void print(int n) {
+        if (n > 9) {
+            print(n/10);
+        }
+        System.out.println(n%10);
+    }
+
+    public static int print2(int n) {
+        if (n < 10) {
+            return n;
+        }
+        return n%10 + print2(n/10);
+    }
+
+    public static int funbonic(int n) {
+        int f1 = 1;
+        int f2 = 1;
+        int f3 = 1;
+        for (int i = 3; i <= n ; i++) {
+            f3 = f1+f2;
+            f1 = f2;
+            f2 = f3;
+        }
+        return f3;
+    }
+
 
 
 
