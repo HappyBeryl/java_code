@@ -129,7 +129,37 @@ public class TestDemo {
     }
 
     public static void main(String[] args) {
-        
+        for(int i = 0; i < args.length;i++) {
+            System.out.println(args[i]);
+        }
+
+
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(Integer.MIN_VALUE);
+
+        int a = Integer.MAX_VALUE;//溢出
+        System.out.println(a+1);
+
+        long a = 10L;
+        System.out.println(a);
+        System.out.println(Long.MAX_VALUE);
+        System.out.println(Long.MIN_VALUE);
+
+
+        double a = 12.5D;
+        System.out.println(a);
+        System.out.println(Double.MAX_VALUE);
+        System.out.println(Double.MIN_VALUE);
+
+
+        double a = 1.1;
+        double b = 1.1;
+
+        System.out.println(a*b);
+
+        float f = 12.5f;
+        System.out.println(f);
+
     }
 
 
