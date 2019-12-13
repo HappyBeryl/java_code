@@ -93,7 +93,7 @@ public class TestDemo {
 
     }
 
-    public static void main(String[] args) {
+    public static void main12(String[] args) {
         MyArrayList<String> myArrayList = new MyArrayList<>();
         System.out.println(myArrayList);
         myArrayList.add("Java");
@@ -128,7 +128,9 @@ public class TestDemo {
         return f3;
     }
 
-
+    public static void main(String[] args) {
+        
+    }
 
 
 
