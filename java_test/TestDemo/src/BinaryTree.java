@@ -60,6 +60,23 @@ public class BinaryTree {
         System.out.print(root.value + " ");
     }
 
+    //求节点个数
+    public int getSize(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return getSize(root.left) + getSize(root.right) +1;
+    }
+    //求叶子节点的个数
+    public int getLeafSize(TreeNode root) {
+        if (root == null) {
+            return 0;
+        } else if (root.left == null && root.right == null) {
+            return 1;
+        }
+        return getLeafSize(root.left) + getLeafSize(root.right);
+    }
+    //第k层节点的个数
     int getKLevelSize(TreeNode root, int k) {
         if (root == null) {
             return 0;
