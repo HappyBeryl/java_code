@@ -185,6 +185,7 @@ public class BinaryTree {
                 ? leftHight + 1 : rightHight + 1;
     }
 
+
     //7.平衡二叉树
     //1.以当前root为根节点，判断当前root是否为平衡的
     //如果是 判断左树右树是否是
