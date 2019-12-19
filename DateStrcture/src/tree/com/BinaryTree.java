@@ -76,14 +76,31 @@ public class BinaryTree {
     }
 
     //非递归中序遍历
+    public List<Character> inorderTraversal(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        List<Character> list = new ArrayList<>();
+        TreeNode cur = root;
+        while(cur != null || !stack.empty()) {
+            while(cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            list.add(cur.value);
+            cur = cur.right;
+        }
+        return list;
+    }
 
-    
+
     //后序遍历   A B D E H C F G
     void postOrderTraversal(TreeNode root) {
         inOrderTraversal(root.left);
         preOrderTraversal(root.right);
         System.out.print(root.value + " ");
     }
+
+    //非递归后序遍历
 
     //10.二叉树的最大深度
     public int maxDepth(TreeNode root) {
