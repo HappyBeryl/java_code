@@ -1,5 +1,7 @@
 package tree.com;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 class TreeNode {
@@ -45,16 +47,22 @@ public class BinaryTree {
         preOrderTraversal(root.left);
         preOrderTraversal(root.right);
     }
+
     //非递归前序遍历
-    void preOrderTraversalNor(TreeNode root) {
+    public List<Character> preorderTraversal(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
+        List<Character> list = new ArrayList<>();
         TreeNode cur = root;
-        while (cur != null) {
-            System.out.println(cur.value);
-            stack.push(cur);
+        while(cur != null || !stack.empty()) {
+            while(cur != null) {
+                stack.push(cur);
+                list.add(cur.value);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            cur = cur.right;
         }
-        cur = stack.pop();
-        cur = cur.right;
+        return list;
     }
 
     //中序遍历   //D B E H A C F G
@@ -67,6 +75,9 @@ public class BinaryTree {
         preOrderTraversal(root.right);
     }
 
+    //非递归中序遍历
+
+    
     //后序遍历   A B D E H C F G
     void postOrderTraversal(TreeNode root) {
         inOrderTraversal(root.left);
