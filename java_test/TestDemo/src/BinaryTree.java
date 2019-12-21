@@ -218,8 +218,7 @@ public class BinaryTree {
         return isSymmetricChild(root.left,root.right);
     }
 
-    //==========================非递归遍历
-    //层序遍历      《打印最右边》 二叉树的题都与几个遍历有关！！
+    //9.层序遍历      《打印最右边》 二叉树的题都与几个遍历有关！！
     public void levelOrderTraversal (TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
         if (root != null) {
@@ -237,8 +236,145 @@ public class BinaryTree {
         }
     }
 
-//    public List<List<Character>> levelOrderTraversal2(TreeNode root) {
+//   public List<List<Character>> levelOrderTraversal2(TreeNode root) {
 //
 //    }
+
+    //----------------------------
+    //10.判断完全二叉树(依赖于层序遍历)
+    /*cur不为空放左右子节点到队列
+    遇到null 说明所有元素都放入队列（如果是完全二叉树）
+    队列里全为null --》是
+    */
+    boolean isCompleteTree(TreeNode root){
+        Queue<TreeNode> queue = new LinkedList<>();
+        if(root != null) {
+            queue.offer(root);
+        }
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.poll();
+            if(cur != null) {
+                queue.offer(cur.left);
+                queue.offer(cur.right);
+            }else {
+                break;
+            }
+        }
+
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.peek();
+            if(cur != null) {
+                return false;
+            }else {
+                queue.poll();
+            }
+        }
+        return true;
+    }
+
+    //11.二叉树的构建及遍历（依赖于前序遍历）
+    /*
+    不为null new节点，不为null i++
+    思考总结：前序遍历的问题思考！！
+     */
+    public static int i = 0;
+    public static TreeNode buildTree(String str) {
+        TreeNode root = null;
+        if(str.charAt(i) != '#') {
+            root = new TreeNode(str.charAt(i));
+            i++;
+            root.left = buildTree(str);
+            root.right = buildTree(str);
+        }else {
+            i++;
+        }
+        return root;
+    }
+
+
+    //12.最近公共祖先（依赖于前序遍历）
+    /*
+    三种情况，递归实现
+    如果左边为空，右边不为空，右边的第一个节点就是最近公共祖先，反之
+    左右两边都找到了，最近公共祖先是root
+     */
+    public TreeNode find (TreeNode root, TreeNode p, TreeNode q) {
+        if (root == p || root == q) {
+            return root;
+        }
+        TreeNode leftTree = find(root.left, p, q);
+        TreeNode rightTree = find(root.right, p, q);
+        if (leftTree != null && rightTree != null) {
+            return root;
+        }
+        if (leftTree != null) {
+            return leftTree;
+        }
+        if (rightTree != null) {
+            return rightTree;
+        }
+        return null;
+    }
+
+    //13.二叉搜索树转换为排序双向链表
+    /*
+    根左<根 根右 >根 ==》二叉搜索树
+    1）有序==》中序遍历
+    2）left前驱，right后继
+     */
+    TreeNode prev = null;
+    public void ConvertChild(TreeNode pCur) {
+        if(pCur == null) {
+            return;
+        }
+        ConvertChild(pCur.left);
+        pCur.left = prev;
+        if(prev != null) {
+            prev.right = pCur;
+        }
+        prev = pCur;
+        ConvertChild(pCur.right);
+    }
+
+    //返回的是双向链表的头结点
+    public TreeNode Convert(TreeNode pRootOfTree) {
+        //这个函数，执行完成后，二叉搜索树的结构已经被改变了
+        ConvertChild(pRootOfTree);
+        TreeNode head = pRootOfTree;
+        //一路向左
+        while (head != null && head.left != null) {
+            head = head.left;
+        }
+        return head;
+    }
+
+
+    //14.根据一棵树的前序遍历和中序遍历构建二叉树
+    /*
+    prevIndex只要一份！2--5 需要返回5 若为局部变量 返回2
+    判断条件，是否有左树或者右树
+    思路：以前序遍历的方式进行思考！
+     */
+
+
+    //15.根据一棵树的中序遍历和后序遍历构建二叉树
+    /*
+
+     */
+
+    //16.二叉树创建字符串（前序遍历）
+    /*
+    左树：
+       左为空，右为空 什么都不做
+       左为空，右不为空  + ‘（）’
+       左不为空，+‘（’遍历左树 + ‘）’
+
+    右树：
+        右为空 什么都不做
+        右不为空 +‘（’遍历右树 + ‘）’
+     */
+
+
+
 
 }
