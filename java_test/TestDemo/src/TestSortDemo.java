@@ -79,7 +79,7 @@ public class TestSortDemo {
 
     /**
      * 快速排序
-     *时间复杂度  O(Nlog2N)      K
+     *时间复杂度  O(Nlog2N)     最坏的情况O（N^2）[有序]
      *空间复杂度  O(log2N)
      * 不稳定
      */
@@ -130,6 +130,7 @@ public class TestSortDemo {
 
 
 
+
     public static void main(String[] args) {
         int[] array1 = new int[]{8,7,10,5,3,9};
 //        insertSort(array1);
@@ -137,5 +138,23 @@ public class TestSortDemo {
         System.out.println(Arrays.toString(array1));
     }
 
+    //"============================"
+    public static void bubbleSort(int[] array) {
+        boolean flg = false;
+        for (int i = 0; i < array.length-1; i++) {
+            for (int j = 0; j < array.length-1-i; j++) {
+                if(array[j] > array[j+1]) {
+                    int tmp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = tmp;
+                    flg = true;
+                }
+            }
+            if(!flg) {
+                break;
+            }
+        }
+    }
+    
 
 }
