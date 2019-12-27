@@ -155,6 +155,55 @@ public class TestSortDemo {
             }
         }
     }
-    
+    public static void adjustDown(int[] array,int root,int len) {
+        //log2n
+        int parent = root;
+        int child = 2*parent+1;
+        while (child < len) {
+            if(child+1 < len && array[child] < array[child+1]) {
+                child++;
+            }
+            //child保存的是最大值的下标
+            if(array[child] > array[parent]) {
+                int tmp = array[child];
+                array[child] = array[parent];
+                array[parent] = tmp;
+                parent = child;
+                child = 2*parent+1;
+            }else {
+                break;
+            }
+        }
+
+    }
+    public static void adjustDown1(int[] array,int root,int len) {
+        //log2n
+        int parent = root;
+        int child = 2*parent+1;
+        while (child < len) {
+            if(child+1 < len && array[child] < array[child+1]) {
+                child++;
+            }
+            //child保存的是最大值的下标
+            if(array[child] > array[parent]) {
+                int tmp = array[child];
+                array[child] = array[parent];
+                array[parent] = tmp;
+                parent = child;
+                child = 2*parent+1;
+            }else {
+                break;
+            }
+        }
+
+    }
+
+    public static void createHeap(int[] array) {
+        for (int i = (array.length-1-1)/2; i >= 0 ; i--) {
+           adjustDown(array,i,array.length);
+        }
+    }
+
+
 
 }
