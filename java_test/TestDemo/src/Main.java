@@ -21,7 +21,66 @@ public class Main {
         return ans;
     }
 
-    
+    public int maxDepth(TreeNode root) {
+        if(root == null) {
+            return 0;
+        }
+        int leftHight = maxDepth(root.left);
+        int rightHight = maxDepth(root.right);
+
+        return leftHight > rightHight
+                ? leftHight + 1 : rightHight + 1;
+
+    }
+}
+
+
+    public boolean isBalanced(TreeNode root) {
+        if(root == null) {
+            return true;
+        }
+        int leftHight = maxDepth(root.left);
+        int rightHight = maxDepth(root.right);
+
+        return Math.abs(leftHight-rightHight) <= 1
+                && isBalanced(root.left)
+                && isBalanced(root.right);
+    }
+
+    public int maxDepth(TreeNode root) {
+        if(root == null) {
+            return 0;
+        }
+        int leftHight = maxDepth(root.left);
+        int rightHight = maxDepth(root.right);
+
+        return leftHight > rightHight
+                ? leftHight + 1 : rightHight + 1;
+
+    }
+
+
+
+class Solution {
+    public boolean isSymmetricChild(TreeNode leftTree,TreeNode rightTree) {
+        if(leftTree == null && rightTree!= null ||
+                leftTree != null && rightTree == null) {
+            return false;
+        }
+        if(leftTree == null && rightTree == null) {
+            return true;
+        }
+        return leftTree.val == rightTree.val &&
+                isSymmetricChild(leftTree.left,rightTree.right)
+                &&isSymmetricChild(leftTree.right,rightTree.left);
+    }
+    public boolean isSymmetric(TreeNode root) {
+        if(root == null) {
+            return true;
+        }
+        return isSymmetricChild(root.left,root.right);
+    }
+}
 
 
 }
