@@ -80,7 +80,38 @@ class Solution {
         }
         return isSymmetricChild(root.left,root.right);
     }
-}
+
+    public static void insertSort(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            int tmp = array[i];
+            int j = 0;
+            for (j = i-1; j >= 0 ; j--) {
+                if(array[j] > tmp) {
+                    array[j+1] = array[j];
+                }else {
+                    break;//前面的序列已经有序
+                }
+            }
+            //
+            array[j+1] = tmp;
+        }
+    }
+
+
+    public static void shell(int[] array,int gap) {
+        for (int i = gap; i < array.length; i++) {
+            int tmp = array[i];
+            int j = 0;
+            for (j = i-gap; j >= 0 ; j -= gap) {
+                if(array[j] > tmp) {
+                    array[j+gap] = array[j];
+                }else {
+                    break;
+                }
+            }
+            array[j+gap] = tmp;
+        }
+    }
 
 
 }
