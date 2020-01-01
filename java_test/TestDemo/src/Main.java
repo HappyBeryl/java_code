@@ -113,5 +113,32 @@ class Solution {
         }
     }
 
+    public static int partion(int[] array, int start, int end) {
+        int tmp = array[start];
+        while (start < end) {
+            while ((start < end) && array[end] >= tmp) {
+                end--;
+            }
+            if (start >= end) {
+                array[start] = tmp;
+                break;
+            } else {
+                array[start] = array[end];
+            }
+
+            while ((start < end ) && array[start] <= tmp) {
+                start++;
+            }
+            if (start >= end) {
+                array[start] = tmp;
+                break;
+            } else {
+                array[end] = array[start];
+            }
+        }
+        return start;
+    }
+
+
 
 }
