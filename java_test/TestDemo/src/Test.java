@@ -7,6 +7,11 @@ class ListNode {
     ListNode next;
 }
 
+class TreeNode1 {
+    TreeNode left = null;
+    TreeNode right = null;
+}
+
 public class Test {
     //斐波那契数列 011234
     public int fib(int N) {
@@ -72,8 +77,31 @@ public class Test {
         if (this.head.data == key) {
             this.head = this.head.next;
         }
-
     }
+
+    public boolean isBalance (TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+
+        int leftHight = maxDepth(root.left);
+        int rightHight = maxDepth(root.right);
+
+        return Math.abs(leftHight-rightHight) <= 1 && isBalance(root.left)
+                && isBalance(root.right);
+    }
+
+    public int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftHight = maxDepth(root.left);
+        int rightHight = maxDepth(root.right);
+        return leftHight > rightHight ? leftHight+1 : rightHight+1;
+    }
+
+
+
 
 
 
