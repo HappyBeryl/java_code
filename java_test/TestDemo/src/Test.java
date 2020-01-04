@@ -2,6 +2,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+class ListNode {
+    int data;
+    ListNode next;
+}
+
 public class Test {
     //斐波那契数列 011234
     public int fib(int N) {
@@ -48,6 +53,29 @@ public class Test {
         }
         return ans;
     }
+
+    ListNode head = null;
+    //单链表删除指定元素
+    public void removeAllKey(int key) {
+        ListNode prev = this.head;
+        ListNode cur = this.head.next;
+        while (cur != null) {
+            if (cur.next.data == key) {
+                prev.next = cur.next;
+                cur = cur.next;
+            } else {
+                prev = cur;
+                cur = cur.next;
+            }
+        }
+        //处理第一个节点--最后处理
+        if (this.head.data == key) {
+            this.head = this.head.next;
+        }
+
+    }
+
+
 
 
 }
