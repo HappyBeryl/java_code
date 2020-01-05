@@ -100,6 +100,29 @@ public class Test {
         return leftHight > rightHight ? leftHight+1 : rightHight+1;
     }
 
+    //12个鸡蛋，一次可以吃2-12个，多少种吃法
+    public static int eatEgg() {
+        int i = 0; //一次可以吃的个数
+        int count = 0; //多少种吃法
+
+    }
+
+    //链表翻转
+    public ListNode reverseList(ListNode head) {
+        ListNode cur = head;
+        ListNode prev = null;
+        ListNode newHead = null;
+        while(cur != null) {
+            if(cur.next == null) {
+                newHead = cur;
+            }
+            ListNode curNext = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = curNext;
+        }
+        return newHead;
+    }
 
 
 
