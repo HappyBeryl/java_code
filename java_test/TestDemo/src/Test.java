@@ -123,7 +123,27 @@ public class Test {
         }
         return newHead;
     }
+    
+    //逆置字符串
+    public static String reverse(String string) {
+        char[] array = string.toCharArray();
+        int left = 0;
+        int right = array.length-1;
+        while (left < right) {
+            char tmp = array[left];
+            array[left] = array[right];
+            array[right] = tmp;
+            left++;
+            right--;
+        }
+        return String.copyValueOf(array);
+    }
 
+    public static void main(String[] args) {
+        String str = "abcdef";
+        String ret = reverse(str);
+        System.out.println(ret);
+    }
 
 
 
