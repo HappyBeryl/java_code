@@ -101,11 +101,11 @@ public class Test {
     }
 
     //12个鸡蛋，一次可以吃2-12个，多少种吃法
-    public static int eatEgg() {
-        int i = 0; //一次可以吃的个数
-        int count = 0; //多少种吃法
-
-    }
+//    public static int eatEgg() {
+//        int i = 0; //一次可以吃的个数
+//        int count = 0; //多少种吃法
+//
+//    }
 
     //链表翻转
     public ListNode reverseList(ListNode head) {
@@ -123,7 +123,7 @@ public class Test {
         }
         return newHead;
     }
-    
+
     //逆置字符串
     public static String reverse(String string) {
         char[] array = string.toCharArray();
@@ -143,6 +143,29 @@ public class Test {
         String str = "abcdef";
         String ret = reverse(str);
         System.out.println(ret);
+
+        StringBuilder sb = new StringBuilder();
+        System.out.println(str.length());
+    }
+
+    //大写转小写
+    //A 65 Z 90
+    //a 97 z 122
+    //法1：
+    public String toLowerCase(String str) {
+        StringBuffer sb = new StringBuffer();
+        for(int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if(ch >= 65 && ch <= 90) {
+                ch = (char)(ch + 32);
+            }
+            sb.append(ch);
+        }
+        return sb.toString();
+    }
+    //法2：
+    public String toLowerCase1(String str) {
+        return str.toLowerCase();
     }
 
 
