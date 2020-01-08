@@ -168,6 +168,17 @@ public class Test {
         return str.toLowerCase();
     }
 
+    //删除第一个字符串当中出现第二个字符串的字符
+    public static List<Character> func(String str1,String str2) {
+        List<Character> ret = new ArrayList<>();
+        for (int i = 0; i < str1.length(); i++) {
+            char ch = str1.charAt(i);
+            if(!str2.contains(ch+"")){
+                ret.add(ch);
+            }
+        }
+        return ret;
+    }
 
 
 
