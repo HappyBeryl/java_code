@@ -37,7 +37,9 @@ public class Main {
         }
     }
 
+    //全部翻转 -》 翻转前k个 -》翻转后n-k个
     public static int[] rotate2(int[] nums, int k) {
+        k %= nums.length; //防止k非法
         reverse(nums, 0, nums.length - 1);
         reverse(nums, 0, k - 1);
         reverse(nums, k, nums.length - 1);
