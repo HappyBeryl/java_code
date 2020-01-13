@@ -56,6 +56,32 @@ public class Main {
         }
     }
 
+    //移除指定元素
+    public int removeElement(int[] nums, int val) {
+        int i = 0;
+        for(int j = 0; j < nums.length; j++) {
+            if(nums[j] != val) {
+                nums[i] = nums[j];
+                i++;
+            }
+        }
+        return i;
+    }
+
+    public int removeElement1(int[] nums, int val) {
+        int i = 0;
+        int len = nums.length;
+        while (i < len) {
+            if (nums[i] != val) {
+                nums[i] = nums[len - 1];
+                len--;
+            } else {
+                i++;
+            }
+        }
+        return len;
+    }
+
     public static void main(String[] args) {
         int[] nums = new int[]{1,2,3,4,5,6,7};
         System.out.println(Arrays.toString(nums));
