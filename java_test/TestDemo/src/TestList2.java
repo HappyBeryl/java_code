@@ -1,9 +1,6 @@
 import sun.font.FontRunIterator;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.LongStream;
 
 class Person implements Comparable<Person> {
@@ -74,7 +71,7 @@ public class TestList2 {
         return ret;
     }
 
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
         List<Person> list = new ArrayList<>();
         list.add(new Person("a", 22));
         list.add(new Person("c",10));
@@ -82,6 +79,21 @@ public class TestList2 {
         System.out.println(list);
         Collections.sort(list);
         System.out.println(list);
+    }
+
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>(10);
+        List<Integer> List2 = new LinkedList<>();
+        list.add(1); //尾插
+        list.add(1,3); //把3插入index=1的位置
+        list.addAll(list);  //传入的参数必须实现Collection接口
+        list.remove(0);  //删除index位置元素
+        int ret = list.get(1);  //获得index位置的元素
+        list.set(0,11); //将0号下标的元素设为11
+        boolean bol = list.contains(11); //判断11是否在线性表中
+        int ret1 = list.indexOf(11); //返回第一个11所在的位置
+        int re2 = list.lastIndexOf(11); //返回最后一个11所在的位置
+        List l1 = list.subList(0,1); //截取部分list 没有产生新的对象！
     }
 
 
