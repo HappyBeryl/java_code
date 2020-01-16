@@ -22,6 +22,7 @@ public class MyCircularQueue {
           this.usedSize++;
           return true;
         }
+
         //出队列
         public boolean deQueue() {
             if (isEmpty()) {
@@ -31,6 +32,7 @@ public class MyCircularQueue {
             this.usedSize--;
             return true;
         }
+
         //弹出队头元素
         public int Front() {
             if(isEmpty()) {
@@ -43,6 +45,7 @@ public class MyCircularQueue {
             if(isEmpty()) {
                 return -1;
             }
+            //or(rear+length)%length-1
             int index = this.rear == 0 ? index = this.elem.length-1 : this.rear-1;
             return elem[index];
         }
