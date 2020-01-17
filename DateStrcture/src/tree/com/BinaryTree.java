@@ -38,34 +38,41 @@ public class BinaryTree {
         return root;
     }
 
-    //前序遍历 A B D E H C F G
-    void preOrderTraversal(TreeNode root) {
+    /**
+     * 二叉树的前序遍历
+     * 递归与非递归
+     */
+    public void preOrderTraversal(TreeNode root) {
         if (root == null) {
             return;
         }
-        System.out.print(root.value + " ");
+        System.out.println(root.value);
         preOrderTraversal(root.left);
         preOrderTraversal(root.right);
     }
 
-    //非递归前序遍历
-    public List<Character> preorderTraversal(TreeNode root) {
+    //非递归
+    public List<Character> preorderTraversal1(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         List<Character> list = new ArrayList<>();
         TreeNode cur = root;
-        while(cur != null || !stack.empty()) {
-            while(cur != null) {
-                stack.push(cur);
-                list.add(cur.value);
-                cur = cur.left;
-            }
+        while (cur != null || !stack.empty()) {
+           while (cur != null) {
+            stack.push(root);
+            list.add(cur.value);
+            cur = cur.left;
+        }
             cur = stack.pop();
             cur = cur.right;
         }
         return list;
     }
 
-    //中序遍历   //D B E H A C F G
+      /**
+       * 二叉树的中序遍历
+       * 递归与非递归
+       */
+
     void inOrderTraversal(TreeNode root) {
         if (root == null) {
             return;
@@ -76,7 +83,24 @@ public class BinaryTree {
     }
 
     //非递归中序遍历
-    public List<Character> inorderTraversal(TreeNode root) {
+     public List<Character> inorderTraversal(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        List<Character> list = new ArrayList<>();
+        TreeNode  cur = root;
+        while (cur != null || !stack.empty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            list.add(cur.value);
+            cur = cur.right;
+        }
+        return list;
+     }
+
+
+    public List<Character> inorderTraversal2(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         List<Character> list = new ArrayList<>();
         TreeNode cur = root;
