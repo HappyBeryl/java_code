@@ -9,12 +9,7 @@ public class TestDemo {
         binaryTree.inOrderTraversal(root);
         System.out.println();
         binaryTree.preOrderTraversal(root);
-
-        /**
-         * 二叉树的前序遍历
-         * 递归与非递归
-         */
-
-
     }
+
+
 }
