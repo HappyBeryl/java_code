@@ -1,0 +1,16 @@
+package heap;
+
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class TestHeap {
+    public static void main(String[] args) {
+        Queue queue = new PriorityQueue(); //默认为小根堆
+        queue.add(1); //入队列  [抛出异常]
+        queue.offer(1); //入队列 [返回特殊值]
+        queue.remove(); //出队列 [抛出异常]
+        queue.poll(); // 出队列 [返回特殊值]
+        queue.element(); //队首元素 [抛出异常]
+        queue.peek(); //队首元素 [返回特殊值]
+    }
+}
