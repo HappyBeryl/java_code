@@ -28,7 +28,7 @@ public class TestSort {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         int[] array = new int[]{34,8,64,51,32,21};
         System.out.println(Arrays.toString(array));
         heapSort(array);
@@ -71,6 +71,35 @@ public class TestSort {
             adjustDown(array, 0, end);
             end--;
         }
+    }
+
+    public static void shell(int[] array, int gap) {
+        for (int i = gap; i < array.length; i++) {
+            int tmp = array[i];
+            int j = 0;
+            for (j = i-gap; j >= 0; j -= gap) {
+                if (array[j] > tmp) {
+                    array[j+gap] = array[j];
+                } else {
+                    break;
+                }
+            }
+            array[j+gap] = tmp;
+        }
+    }
+
+    public static void shellSort(int[] array) {
+        //分的组数
+        int[] drr = {5,3,1};
+        for (int i = 0; i < drr.length; i++) {
+            shell(array, drr[i]);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] array = new int[]{12, 5, 9, 34, 6, 8, 33, 56, 89, 0, 7, 4, 22, 55, 77};
+        shellSort(array);
+        System.out.println(Arrays.toString(array));
     }
 }
 
