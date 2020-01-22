@@ -146,12 +146,13 @@ public class TestSort {
     }
 
     public static void main(String[] args) {
+        final  int b= 10;
         int[] array = new int[]{27, 15, 19, 18, 28, 34, 65, 49, 25, 37};
         quickSort(array);
         System.out.println(Arrays.toString(array));
     }
 
-    
+
 }
 
 
