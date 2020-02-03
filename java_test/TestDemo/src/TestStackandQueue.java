@@ -88,6 +88,112 @@ class MyStack2 {
     }
 }
 
+/*
+  链式队列：链表实现
+ */
+
+class MyListQueue1 {
+    Node2 front;
+    Node2 rear;
+    int usedSize;
+
+    //判断是否为空
+    public boolean isEmpty() {
+        return usedSize == 0;
+    }
+
+    // 入队(尾插)
+    public void offer(int data) {
+        Node2 node = new Node2(data);
+        if (isEmpty()) {
+           this.front = node;
+           this.rear = node;
+        } else {
+           this.rear.next = node;
+           rear = node;
+        }
+        this.usedSize++;
+    }
+
+    //出队（从头出）
+    public int poll() {
+        int tmp = this.front.val;
+        this.front = this.front.next;
+        this.usedSize--;
+        return tmp;
+    }
+
+    //弹出队头元素
+    public int peek() {
+        return this.front.val;
+    }
+}
+
+public class MyCircularQueue1 {
+// 从rear入 从front出
+    public int[] elem;
+    public int front;
+    public int rear;
+    public int usedSize;
+
+    public MyCircularQueue1(int k) {
+        this.elem = new int[k];
+        this.front = 0;
+        this.rear = 0;
+        this.usedSize = 0;
+    }
+
+    //进队列
+    public boolean enQueue(int value) {
+        if (isFull()) {
+            return false;
+        }
+        this.elem[rear] = value;
+        this.rear = (this.rear+1)%this.elem.length;
+        this.usedSize++;
+        return true;
+    }
+
+    //出队列
+    public boolean deQueue() {
+        if (isEmpty()) {
+            return false;
+        }
+        this.front = (this.front+1) % this.elem.length;
+        this.usedSize--;
+        return true;
+    }
+
+    //弹出队头元素
+    public int Front() {
+        if(isEmpty()) {
+            return -1;
+        }
+        return this.elem[this.front];
+
+    }
+
+    //弹出队尾元素
+    public int Rear() {
+        if (isEmpty()) {
+            return -1;
+        }
+        int index = this.rear == 0 ? this.elem.length-1 : rear-1;
+        return elem[index];
+    }
+
+    public boolean isEmpty() {
+        return this.front == this.rear;
+    }
+
+    public boolean isFull() {
+        return this.front == (this.rear+1)%this.elem.length;
+    }
+
+}
+
+
+
 public class TestStackandQueue {
     public static void main(String[] args) {
         MyStack1 myStack = new MyStack1();
