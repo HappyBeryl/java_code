@@ -2,6 +2,8 @@
 顺序栈：数组实现栈
  */
 
+import java.util.Stack;
+
 class MyStack1 {
    int[] elem;
    int top;
@@ -129,7 +131,7 @@ class MyListQueue1 {
     }
 }
 
-public class MyCircularQueue1 {
+class MyCircularQueue1 {
 // 从rear入 从front出
     public int[] elem;
     public int front;
@@ -195,11 +197,45 @@ public class MyCircularQueue1 {
 
 
 public class TestStackandQueue {
+    /**
+     * 20.有效的括号
+     */
+    public boolean isValid1(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (ch == '(' || ch == '[' || ch == '{') {
+                stack.push(ch);
+            } else {
+                if (stack.isEmpty()) {
+                    System.out.println("右括号多");
+                    return false;
+                }
+                char top = stack.peek();
+                if (top == '(' && ch == ')' ||
+                        top == '{' && ch == '}' ||
+                        top == '[' && ch == ']') {
+                    stack.pop();
+                } else {
+                    System.out.println("右括号匹配错误！");
+                    return false;
+                }
+            }
+            if (!stack.isEmpty()) {
+                System.out.println("左括号多");
+                return false;
+            }
+        }
+        return true;
+    }
+
+
     public static void main(String[] args) {
         MyStack1 myStack = new MyStack1();
         myStack.push(1);
         myStack.push(2);
         System.out.println(myStack.pop());
         System.out.println(myStack.peek());
+
     }
 }
