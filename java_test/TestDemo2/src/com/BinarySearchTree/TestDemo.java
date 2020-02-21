@@ -15,7 +15,6 @@ public class TestDemo {
         testBinaryTree.preOrder(testBinaryTree.root);
 
         testBinaryTree.remove(10);
-        System.out.println("====================");
         testBinaryTree.inorder(testBinaryTree.root);
         System.out.println();
         testBinaryTree.preOrder(testBinaryTree.root);
