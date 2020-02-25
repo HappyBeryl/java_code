@@ -194,7 +194,7 @@ public class TestDemo {
         return buildTreeChild1(inorder, postorder, 0, inorder.length-1);
     }
 
-    
+
 
 
 }
