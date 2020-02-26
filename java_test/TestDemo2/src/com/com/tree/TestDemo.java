@@ -194,7 +194,39 @@ public class TestDemo {
         return buildTreeChild1(inorder, postorder, 0, inorder.length-1);
     }
 
+    //二叉树创建字符串
 
+    public String tree2str(TreeNode t) {
+        StringBuilder sb = new StringBuilder();
+        tree2strChild(t, sb);
+        return sb.toString();
+    }
+
+    public void tree2strChild(TreeNode t, StringBuilder str) {
+        if (t == null) {
+            return;
+        }
+        str.append(t.val);
+        if (t.left == null) {
+            if (t.right == null) {
+                return;
+            } else {
+                str.append("()");
+            }
+        } else {
+                str.append("(");
+                tree2strChild(t.left, str);
+                str.append(")");
+        }
+    //以上代码是递归前的位置 左执行完了
+        if (t.right == null) {
+            return;
+        } else {
+            str.append("(");
+            tree2strChild(t.right, str);
+            str.append(")");
+        }
+    }
 
 
 }
