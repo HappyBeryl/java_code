@@ -101,6 +101,5 @@ public class TestDemo2 {
         String id = hashBack.getValue(person2);
         System.out.println(id);
 
-
     }
 }
