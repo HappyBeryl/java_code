@@ -46,9 +46,18 @@ public class TestDemo {
 //		return f3;
         return  frogjump(n-1)+ frogjump(n-2);
     }
-    
 
+    static  int a = 100;
+    int b = 20;
     public static void main(String[] args) {
-        System.out.println(factor(5));
+        a = 10;
+     //   b = 10; //error
+        System.out.println(a);
     }
+
+    public void func() {
+        a = 10;
+    }
+
+
 }
