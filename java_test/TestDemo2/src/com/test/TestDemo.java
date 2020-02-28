@@ -2,6 +2,8 @@ package com.test;
 
 import java.util.Arrays;
 
+import static com.sun.xml.internal.ws.util.VersionUtil.compare;
+
 public class TestDemo {
 
     //阶乘
@@ -58,6 +60,62 @@ public class TestDemo {
     public void func() {
         a = 10;
     }
+
+    private String removeFrontZero(String num) {
+        int start = 0;
+        for (int i = 0; i < num.length(); i++) {
+            if (num.charAt(i) == '0') {
+                start++;
+            } else {
+                break;
+            }
+        }
+        return num.substring(start);
+    }
+
+    public int compares(String str1, String str2) {
+        removeFrontZero(str1);
+        removeFrontZero(str2);
+        //先根据长度进行判断
+        if (str1.length() > str2.length()) {
+            return 1;
+        } else if (str1.length() < str2.length()) {
+            return -1;
+        } else {
+            //长度相等的时候
+            for (int i = 0; i < str1.length(); i++) {
+                if (str1.charAt(i) - str2.charAt(i) > 0) {
+                    return 1;
+                } else if (str1.charAt(i) - str2.charAt(i) < 0) {
+                    return -1;
+                }
+            }
+            return 0;
+        }
+    }
+    public int compareVersion(String version1, String version2) {
+        //以.进行分割 返回数组
+        String s1[] = version1.split("\\.");
+        String s2[] = version2.split("\\.");
+        //判断是否相等
+        int i = 0;
+        int j = 0;
+        while (i < s1.length || j < s2.length) {
+            String str1 = i < s1.length ? s1[i] : "0";
+            String str2 = j < s2.length ? s2[i] : "0";
+            int ret = compares(str1, str2);
+            if (ret == 0) {
+                i++;
+                j++;
+            } else {
+                return ret;
+            }
+        }
+        return 0;
+    }
+
+
+
 
 
 }
