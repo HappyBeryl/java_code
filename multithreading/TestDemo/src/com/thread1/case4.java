@@ -1,4 +1,7 @@
 package com.thread1;
+
+import java.util.Scanner;
+
 /*
 线程属性
  */
@@ -39,6 +42,27 @@ public class case4 {
         }
     }
 
+}
 
+class Test {
+    private static boolean condition = true;
+
+    private static class PrintCondition extends Thread {
+        @Override
+        public void run() {
+            while (true) {
+                System.out.println(condition);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        PrintCondition pc = new PrintCondition();
+        pc.start();
+
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+        condition = false;  // 一定概率下，pc 线程看不到这个变化
+    }
 }
 
