@@ -118,7 +118,7 @@ public class TestDemo {
         static int[] weight;
         static int N;
         static int count=0;
-        public static void main(String[] args) {
+        public static void main2(String[] args) {
             Scanner input = new Scanner(System.in);
             while (input.hasNext()) {
                 N = input.nextInt();
@@ -144,9 +144,7 @@ public class TestDemo {
             count(s, n - 1);
         }
 
+        
 
 
-
-
-
-            }
+}
