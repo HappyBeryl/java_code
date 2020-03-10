@@ -56,13 +56,23 @@ class Test {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
         PrintCondition pc = new PrintCondition();
         pc.start();
 
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
         condition = false;  // 一定概率下，pc 线程看不到这个变化
+    }
+
+    public static void main(String[] args) {
+        // 遍历该枚举中所有的可选项
+        // 也就是线程所有的状态
+        Thread.State[] values = Thread.State.values();
+
+        for (Thread.State state : values) {
+            System.out.println(state);
+        }
     }
 }
 
