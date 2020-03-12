@@ -12,22 +12,22 @@ public class TestDemo {
         if (n == 1) {
             return 1;
         }
-        return n*factor(n-1);
+        return n * factor(n - 1);
     }
 
     public static int fibonacci(int n) {
-        if(n==1 || n==2) {
+        if (n == 1 || n == 2) {
             return 1;
         }
-        return fibonacci(n-1)+fibonacci(n-2);
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
     public static int fibonacci2(int n) {
         int f1 = 1;
         int f2 = 1;
         int f3 = 1;
-        for(int i=3; i<=n; i++) {
-            f3 = f2+f1;
+        for (int i = 3; i <= n; i++) {
+            f3 = f2 + f1;
             f1 = f2;
             f2 = f3;
         }
@@ -35,7 +35,7 @@ public class TestDemo {
     }
 
     public static int frogjump(int n) {
-        if(n == 1 || n==2) {
+        if (n == 1 || n == 2) {
             return n;
         }
 //		int f1 = 1;
@@ -47,14 +47,15 @@ public class TestDemo {
 //			f2 = f3;
 //		}
 //		return f3;
-        return  frogjump(n-1)+ frogjump(n-2);
+        return frogjump(n - 1) + frogjump(n - 2);
     }
 
-    static  int a = 100;
+    static int a = 100;
     int b = 20;
+
     public static void main1(String[] args) {
         a = 10;
-     //   b = 10; //error
+        //   b = 10; //error
         System.out.println(a);
     }
 
@@ -94,6 +95,7 @@ public class TestDemo {
             return 0;
         }
     }
+
     public int compareVersion(String version1, String version2) {
         //以.进行分割 返回数组
         String s1[] = version1.split("\\.");
@@ -115,36 +117,92 @@ public class TestDemo {
         return 0;
     }
 
-        static int[] weight;
-        static int N;
-        static int count=0;
-        public static void main2(String[] args) {
-            Scanner input = new Scanner(System.in);
-            while (input.hasNext()) {
-                N = input.nextInt();
-                weight = new int[N+1];
-                for (int i = 1; i <= N; i++) {
-                    weight[i] = input.nextInt();
-                }
-                count(40,N);
-                System.out.println(count);
+    static int[] weight;
+    static int N;
+    static int count = 0;
+
+    public static void main2(String[] args) {
+        Scanner input = new Scanner(System.in);
+        while (input.hasNext()) {
+            N = input.nextInt();
+            weight = new int[N + 1];
+            for (int i = 1; i <= N; i++) {
+                weight[i] = input.nextInt();
             }
+            count(40, N);
+            System.out.println(count);
         }
-        public static void count(int s,int n) {
-            //如果正好装满
-            if (s == 0) {
-                ++count;
-                return;
+    }
 
+    public static void count(int s, int n) {
+        //如果正好装满
+        if (s == 0) {
+            ++count;
+            return;
+
+        }
+        //是s<0或n<1则不能完成
+        if (s < 0 || (s > 0 && n < 1))
+            return;
+        count(s - weight[n], n - 1);
+        count(s, n - 1);
+    }
+
+    public static void main22(String[] args) {
+        byte b1 = 1, b2 = 2, b3, b6;
+        final byte b4 = 4, b5 = 6;
+        b6 = b4 + b5;
+        //b3 = b1 + b2; 类型转换异常
+
+    }
+
+
+
+
+}
+
+class Test1 {
+    public static void main1(String[] args) {
+        Object o = new Object(){
+            public boolean equals(Object obj) {
+                return true;
             }
-            //是s<0或n<1则不能完成
-            if (s < 0 || (s > 0 && n < 1))
-                return;
-            count(s - weight[n], n - 1);
-            count(s, n - 1);
+        };
+        System.out.println(o.equals("Fred"));
+    }
+}
+class Test {
+    public static void main(String [] args){
+        System.out.println(new B().getValue());
+    }
+    static class A{
+        protected int value;
+        public A(int v) {
+            setValue(v);
         }
-
-
-
-
+        public void setValue(int value){
+            this.value = value;
+        }
+        public int getValue(){
+            try{
+                value++;
+                return value;
+            } catch(Exception e){
+                System.out.println(e.toString());
+            } finally {
+                this.setValue(value);
+                System.out.println(value);
+            }
+            return value;
+        }
+    }
+     static class B extends A{
+        public B() {
+            super(5);
+            setValue(getValue() - 3);
+        }
+        public void setValue(int value){
+            super.setValue(2 * value);
+        }
+    }
 }
