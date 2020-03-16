@@ -28,6 +28,7 @@ public class case5 {
     }
     static void dianping() {
         System.out.println("dianping");
+
     }
 
 }
