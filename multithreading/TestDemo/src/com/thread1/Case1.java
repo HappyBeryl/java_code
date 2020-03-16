@@ -59,10 +59,14 @@ public class Case1 {
         System.out.printf("多线程，运行时间: %f%n", s);
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main1(String[] args) throws InterruptedException {
         // main 有个线程
         单线程();
         多线程();
     }
+
+
 }
+
+
 
