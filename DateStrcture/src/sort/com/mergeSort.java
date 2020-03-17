@@ -1,5 +1,7 @@
 package sort.com;
 
+import java.util.Arrays;
+
 public class mergeSort {
 
     //合并递归完的数组
@@ -50,5 +52,6 @@ public class mergeSort {
     public static void mergeSort1(int[] array) {
         mergeSortInternal(array,0,array.length-1);
     }
+
 
 }
