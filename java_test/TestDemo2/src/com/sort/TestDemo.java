@@ -43,10 +43,17 @@ public class TestDemo {
         mergeSortIntenal(array, 0, array.length-1);
     }
 
-    public static void main(String[] args) {
+    public static void main25(String[] args) {
         int[] array = new int[]{10, 6, 7, 1, 3, 9, 4, 2};
         mergeSort(array);
         System.out.println(Arrays.toString(array));
     }
+
+  /*  public static void main(String[] args) {
+        String foo1 = args[1];
+        String foo2 = args[2];
+        String foo3 = args[3];
+    }*/
+
 
 }
