@@ -98,15 +98,53 @@ public class TestDemo {
 
     public static void main(String[] args) {
         int[] array = new int[]{10, 6, 7, 1, 3, 9, 4, 2};
-        mergeSort1(array);
+        selectSort(array);
         System.out.println(Arrays.toString(array));
     }
 
+    public static void selectSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i+1; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    int tmp = array[i];
+                    array[i] = array[j];
+                    array[j] = tmp;
+                }
+            }
+        }
+    }
   /*  public static void main(String[] args) {
         String foo1 = args[1];
         String foo2 = args[2];
         String foo3 = args[3];
     }*/
 
+    public static void bubbleSort(int[] array) {
+        for (int i = 0; i < array.length-1; i++) {
+            for (int j = 0; j < array.length-1-i; j++) {
+                if (array[j] > array[j+1]) {
+                    int tmp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = tmp;
+                }
+            }
+        }
+    }
 
+    public static void bubbleSort1(int[] array) {
+        boolean flg = false;
+        for (int i = 0; i < array.length-1; i++) {
+            for (int j = 0; j < array.length-1-i; j++) {
+                if (array[j] > array[j+1]) {
+                    int tmp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = tmp;
+                    flg = true;
+                }
+            }
+            if (!flg) {
+                break;
+            }
+        }
+    }
 }
