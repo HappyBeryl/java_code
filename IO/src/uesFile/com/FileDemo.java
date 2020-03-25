@@ -35,10 +35,11 @@ public class FileDemo {
             System.out.println(file.canExecute()); //是否可执行
         }*/
 
-        /*{
+        /*
+        {
             //普通文件的创建
-            String parent = "D:\\文档";
-            String fileName = "演示创建文件的文件.txt";
+            String parent = "D:\\文档\\File类练习";
+            String fileName = "文件1.txt";
 
             File file = new File(parent, fileName);
             System.out.println(file.exists());
@@ -50,16 +51,14 @@ public class FileDemo {
             }
         }*/
 
-        /*
+
         {
             // 文件夹的创建过程
-            String parent = "D:\\文档";
-            String filename = "一个事先不存在的文件夹\\一个新的文件夹";
-
+            String parent = "D:\\文档\\File类练习";
+            String filename = "文件夹的创建";
             File file = new File(parent, filename);
-            System.out.println(file.exists());
-
             // mkdirs: 会把需要创建的中间文件夹一并创建出来
+            System.out.println(file.exists());
             boolean success = file.mkdirs();
             if (success) {
                 System.out.println(filename + " 文件夹创建成功");
@@ -67,7 +66,7 @@ public class FileDemo {
                 System.out.println(filename + " 文件夹原来就存在");
             }
         }
-*/
+
 
         /*
         {
