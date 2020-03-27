@@ -12,7 +12,6 @@ public class QuickSort2 {
                 end--;
             }
             if (start >= end) {
-                array[start] = tmp;
                 break;
             } else {
                 array[start] = array[end];
@@ -22,13 +21,12 @@ public class QuickSort2 {
                 start++;
             }
             if (start >= end) {
-                array[start] = tmp; //
                 break;
             } else {
                 array[end] = array[start];
             }
-
         }
+        array[start] = tmp;
         return start;
     }
 
