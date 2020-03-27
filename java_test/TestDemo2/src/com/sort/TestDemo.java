@@ -1,6 +1,8 @@
 package com.sort;
 
 import java.util.Arrays;
+import java.util.Stack;
+import java.util.WeakHashMap;
 
 public class TestDemo {
 
@@ -96,7 +98,7 @@ public class TestDemo {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         int[] array = new int[]{10, 6, 7, 1, 3, 9, 4, 2};
         selectSort(array);
         System.out.println(Arrays.toString(array));
@@ -147,4 +149,158 @@ public class TestDemo {
             }
         }
     }
+
+    public static int partion(int[] array, int start, int end) {
+        int tmp = array[start];
+        while (start < end) {
+            while ((start < end) && array[end] > tmp) {
+                end--;
+            }
+            if (start >= end) {
+                break;
+            } else {
+                array[start] = array[end];
+            }
+
+            while ((start < end) && array[start] < tmp) {
+                start++;
+            }
+            if (start >= end) {
+                break;
+            } else {
+                array[end] = array[start];
+            }
+        }
+        array[start] = tmp;
+        return start;
+    }
+    public static void quick(int[] array, int low, int high) {
+        if (low >= high) {
+            return;
+        }
+        int pivot = partion(array, low, high);
+        quick(array, low, pivot-1);
+        quick(array, pivot+1, high);
+    }
+
+    public static void quickSort(int[] array) {
+        quick(array, 0, array.length-1);
+    }
+
+
+
+    public static int partion1(int[] array, int start, int end) {
+        int tmp = array[start];
+        while (start < end) {
+            while ((start < end) && array[end] >= tmp) {  //9 3 2 9 10
+                end--;
+            }
+            if (start >= end) {
+                break;
+            } else {
+                array[start] = array[end];
+            }
+
+            while ((start < end) && array[start] <= tmp) {  //9 3 2 9 10
+                start++;
+            }
+            if (start >= end) {
+                break;
+            } else {
+                array[end] = array[start];
+            }
+        }
+        array[start] = tmp;
+        return start;
+    }
+
+    public static void quick1(int[] array, int low, int high) {
+        int pivot = partion1(array, low, high);
+        Stack<Integer> stack = new Stack<>();
+
+        if (pivot > low+1) {
+            stack.push(low);
+            stack.push(pivot-1);
+        }
+
+        if (pivot < high-1) {
+            stack.push(pivot+1);
+            stack.push(high);
+        }
+
+        while (!stack.empty()) {
+            high = stack.pop();
+            low = stack.pop();
+            pivot = partion1(array, low, high);
+
+            if (pivot > low+1) {
+                stack.push(low);
+                stack.push(pivot-1);
+            }
+
+            if (pivot < high-1) {
+                stack.push(pivot+1);
+                stack.push(high);
+            }
+
+        }
+    }
+    public static void quickSort1(int[] array) {
+        quick1(array, 0, array.length-1);
+    }
+
+    //向下调整
+    public static void adjustDown(int[] array, int root, int len) {
+        int parent = root;
+        int child = 2*parent+1;
+        while (child < len) {
+            if (child+1 < len && array[child] < array[child+1]) {
+                child++;
+            }
+            //此时child就是指向子孩子的较大值
+            if (array[child] > array[parent]) {
+                int tmp = array[child];
+                array[child] = array[parent];
+                array[parent] = tmp;
+                //调整子树也要是大根堆
+                parent = child;
+                child = 2*parent+1;
+            } else {
+                break;
+            }
+        }
+    }
+
+    //每棵树都向下调整
+    public static void creatHeap(int[] array) {
+        for (int i = (array.length-1-1)/2; i >= 0; i--) {
+            adjustDown(array, i, array.length);
+        }
+    }
+
+    //进行排序
+    public static void heapSort(int[] array) {
+        creatHeap(array);
+        int end = array.length-1;
+        while (end > 0) {
+            int tmp = array[0];
+            array[0] = array[end];
+            array[end] = tmp;
+            //adjustDown取不到len 所以先调整后end--
+            adjustDown(array, 0, end);
+            end--;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] array = new int[]{1,5,6,3,2,8,9,0,10,4,7};
+        quickSort1(array);
+        System.out.println(Arrays.toString(array));
+    }
+
+
+
+
+
+
 }
