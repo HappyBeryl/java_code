@@ -27,7 +27,7 @@ public class Server {
                     PrintWriter osPrintWriter = new PrintWriter(osWriter);
 
                     // 一个连接中只会发送一个请求
-                    char[] receiveBuffer = new char[8192];  
+                    char[] receiveBuffer = new char[8192];
                     int len = isReader.read(receiveBuffer);
                     System.out.println(isReader.read());
 
