@@ -292,11 +292,51 @@ public class TestDemo {
         }
     }
 
+    public static void insertSort(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            int tmp = array[i];
+            int j =0;
+            for (j = i-1; j >= 0; j--) {
+               if (array[j] > tmp) {
+                   array[j+1] = array[j];
+               } else {
+                   break;
+               }
+            }
+            array[j+1] = tmp;
+        }
+    }
+
+    public static void shell(int[] array, int gap) {
+        for (int i = gap; i < array.length; i++) {
+            int tmp = array[i];
+            int j = 0;
+            for (j = i-gap; j >= 0; j -= gap) {
+                if (array[j] > tmp) {
+                    array[j+gap] = array[j];
+                } else {
+                    break;
+                }
+            }
+            array[j+gap] = tmp;
+        }
+    }
+
+    public static void shellSort(int[] array) {
+        //分的组数
+        int[] drr = {5,3,1};
+        for (int i = 0; i < drr.length; i++) {
+            shell(array, drr[i]);
+        }
+    }
+
     public static void main(String[] args) {
         int[] array = new int[]{1,5,6,3,2,8,9,0,10,4,7};
-        quickSort1(array);
+        shellSort(array);
         System.out.println(Arrays.toString(array));
     }
+
+
 
 
 
