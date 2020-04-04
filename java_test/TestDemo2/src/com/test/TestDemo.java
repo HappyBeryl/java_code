@@ -1,7 +1,9 @@
 package com.test;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.Vector;
 
 import static com.sun.xml.internal.ws.util.VersionUtil.compare;
 
@@ -172,7 +174,7 @@ class Test1 {
     }
 }
 class Test {
-    public static void main(String [] args){
+    public static void main1(String [] args){
         System.out.println(new B().getValue());
     }
     static class A{
@@ -205,4 +207,8 @@ class Test {
             super.setValue(2 * value);
         }
     }
+
+
+
+
 }
