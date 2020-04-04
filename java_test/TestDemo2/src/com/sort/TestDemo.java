@@ -1,10 +1,25 @@
 package com.sort;
 
-import java.util.Arrays;
-import java.util.Stack;
-import java.util.WeakHashMap;
+import java.util.*;
 
 public class TestDemo {
+
+
+    public static void mergeSort(int[] array) {
+        mergeSortIntenal(array, 0 , array.length-1);
+    }
+
+    public static void mergeSortIntenal(int[] array, int low, int high) {
+        //递出去
+        if (low >= high) {
+            return;
+        }
+
+        int mid = (low + high) / 2;
+        mergeSortIntenal(array, low, mid);
+        mergeSortIntenal(array, mid + 1, high);
+        merge(array, low, mid, high);
+    }
 
     public static void merge(int[] array, int low, int mid, int high) {
         int i = low;
@@ -32,21 +47,7 @@ public class TestDemo {
         }
     }
 
-    public static void mergeSortIntenal(int[] array, int low, int high) {
-        //递出去
-        if (low >= high) {
-            return;
-        }
 
-        int mid = (low + high) / 2;
-        mergeSortIntenal(array, low, mid);
-        mergeSortIntenal(array, mid + 1, high);
-        merge(array, low, mid, high);
-    }
-
-    public static void mergeSort(int[] array) {
-        mergeSortIntenal(array, 0 , array.length-1);
-    }
 
 
     public static void mergeSort1(int[] array) {
@@ -333,6 +334,7 @@ public class TestDemo {
     public static void main(String[] args) {
         int[] array = new int[]{1,5,6,3,2,8,9,0,10,4,7};
         shellSort(array);
+        List l = new ArrayList();
         System.out.println(Arrays.toString(array));
     }
 
