@@ -1,5 +1,7 @@
 package com.xm.gui;
-
+/*
+响应事件
+ */
 import com.xm.osm.FileScanner;
 import com.xm.osm.FileTreeNode;
 import com.xm.osm.OSResource;
