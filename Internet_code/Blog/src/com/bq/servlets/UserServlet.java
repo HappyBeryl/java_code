@@ -13,6 +13,10 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.ParseException;
 
+/*
+获取用户信息
+ */
+
 @WebServlet("/u")
 public class UserServlet extends HttpServlet {
     @Override
@@ -24,6 +28,7 @@ public class UserServlet extends HttpServlet {
         if (username == null) {
             HttpSession session = req.getSession();
             User user = (User) session.getAttribute("user");
+            //已经登录
             if (user != null) {
                 printHtmlUser(user, resp);
             } else {

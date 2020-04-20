@@ -44,7 +44,7 @@ public class User {
     }
 
     public static User register(String username, String nickname, String password) throws SQLException {
-        // 把密码 Hash 后再保存进数据库，放置因为数据库被拖库，进而导致的用户密码泄露
+        // 把密码 Hash 后再保存进数据库，防止用户密码泄露
         // MD5 -> SHA264
         password = hash(password);
 
@@ -101,6 +101,7 @@ public class User {
         return user;
     }
 
+    //hash密码
     private static String hash(String password) {
         try {
             StringBuilder sb = new StringBuilder();
@@ -109,8 +110,6 @@ public class User {
             for (byte b : encrypted) {
                 sb.append(String.format("%02x", b));
             }
-            System.out.println(sb.toString());
-            System.out.println(sb.toString().length());
             return sb.toString();
         } catch (Exception e) {
             e.printStackTrace();

@@ -12,6 +12,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+/*
+用户注册
+ */
 @WebServlet("/reg")
 public class RegisterServlet extends HttpServlet {
     @Override
@@ -24,7 +27,7 @@ public class RegisterServlet extends HttpServlet {
         String nickname = req.getParameter("nickname");
         String password = req.getParameter("password");
 
-        // 对用户输入的内容，进行合法性校验 —— 永远不要相信用户的输入信息
+        // 对用户输入的内容，进行合法性校验
         if (username == null || username.isEmpty()) {
             System.out.println("用户名不合法");
             resp.sendRedirect("/register.html");

@@ -15,7 +15,7 @@ public class Database {
         mysqlDataSource.setPort(3306);
         mysqlDataSource.setUser("root");
         mysqlDataSource.setPassword("");
-        mysqlDataSource.setDatabaseName("java20_blog04");
+        mysqlDataSource.setDatabaseName("blog20200418");
         mysqlDataSource.setUseSSL(false);
         mysqlDataSource.setCharacterEncoding("utf8");
 

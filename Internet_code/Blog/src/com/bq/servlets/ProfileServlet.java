@@ -11,6 +11,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/*
+修改用户信息
+ */
 @WebServlet("/profile")
 public class ProfileServlet extends HttpServlet {
     @Override

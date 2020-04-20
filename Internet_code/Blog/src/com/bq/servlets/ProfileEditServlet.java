@@ -11,6 +11,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/*
+用户资料修改
+ */
 @WebServlet("/profile/edit")
 public class ProfileEditServlet extends HttpServlet {
     @Override
@@ -27,9 +30,8 @@ public class ProfileEditServlet extends HttpServlet {
             return;
         }
 
-        // 现在要修改用户资料，但修改的哪个用户的资料呢？
-        // HTTP 无状态特性，导致我不知道修改的是哪个用户的资料
-        // 通过登陆状态获取
+        // HTTP 无状态特性，导致不知道修改的是哪个用户的资料
+        // 通过登陆状态获取修改的哪个用户的资料
         try {
             User.update(user.id, nickname, brief);
         } catch (SQLException e) {
