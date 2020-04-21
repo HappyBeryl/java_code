@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class User {
-    private static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    public static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public int id;
     public String username;
@@ -129,4 +129,29 @@ public class User {
             }
         }
     }
+
+    public static User login(String username, String password) throws SQLException {
+        String sql = "SELECT id, nickname, brief, registered_at FROM users WHERE username = ? AND PASSWORD = ?";
+        try (Connection con = Database.getConnection()) {
+            try (PreparedStatement stmt = con.prepareStatement(sql)) {
+                stmt.setString(1, username);
+                stmt.setString(2, hash(password));  // 密码在保存时已经被 Hash 过了，查找也得进行一次 Hash
+                try (ResultSet rs = stmt.executeQuery()) {
+                    if (rs.next()) {
+                        int id = rs.getInt("id");
+                        String nickname = rs.getString("nickname");
+                        String brief = rs.getString("brief");
+                        Date registeredAt = dateFormat.parse(rs.getString("registered_at"));
+                        return new User(id, username, nickname, brief, registeredAt);
+                    } else {
+                        return null;
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+        }
+    }
+
 }
