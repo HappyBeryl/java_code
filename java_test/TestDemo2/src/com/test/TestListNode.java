@@ -7,51 +7,104 @@ public class TestListNode {
       ListNode(int x) { val = x; }
     }
 
-    ListNode head  = null;
+    ListNode head = null;
     public void removeAllKey(int key) {
-        ListNode prev = this.head;
-        ListNode cur = this.head.next;
+        ListNode prev = head;
+        ListNode cur = head.next;
         while (cur != null) {
             if (prev.next.val == key) {
                 prev.next = cur.next;
                 cur = cur.next;
             } else {
-                prev.next = cur;
+                prev = cur;
                 cur = cur.next;
             }
         }
-        if (this.head.val == key) {
-            this.head = this.head.next;
+        if (head.val == key) {
+            head = head.next;
         }
     }
 
-    public int kthToLast(ListNode head, int k) {
-        if(head == null || k <= 0) {
-            return -1;
+    public ListNode reverseList(){
+        if (head == null) {
+            return null;
+        }
+        ListNode prev = null;
+        ListNode cur = head;
+        ListNode newHead = null;
+        while (cur != null) {
+            ListNode curNext = cur.next;
+            if (curNext == null) {
+                newHead = cur;
+            }
+            cur.next = prev;
+            prev = cur;
+            cur = cur.next;
+        }
+        return newHead;
+    }
+
+    public ListNode middleNode() {
+        ListNode fast = head;
+        ListNode slow = head;
+        if (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+
+    public ListNode FindKthToTail(int k) {
+        if (k < 0 || head == null) {
+            return null;
         }
         ListNode fast = head;
         ListNode slow = head;
-        for(int i = 0; i < k-1; i++) {
-            if(fast.next == null) {
-                return -1;
+        for (int i = 0; i < k-1; i++) {
+            if (fast.next == null) {
+                return null;
             }
             fast = fast.next;
         }
-        while(fast.next != null) {
+        while (fast.next != null) {
             fast = fast.next;
             slow = slow.next;
         }
-        return slow.val;
+        return slow;
     }
 
-    public ListNode partition(int k) {
+    public  ListNode mergeTwoLists1(ListNode headA, ListNode headB){
+        ListNode newHead = new ListNode(-1);
+        ListNode tmp = newHead;
+        while (headA != null && headB != null) {
+            if (headA.val < head.val) {
+                tmp.next = headA;
+                headA = headA.next;
+                tmp = tmp.next;
+            } else {
+                tmp.next = headB;
+                headB = headB.next;
+                tmp = tmp.next;
+            }
+        }
+        if (headA == null) {
+            tmp.next = headB;
+        }
+        if (headB == null) {
+            tmp.next = headB;
+        }
+        return newHead.next;
+    }
+
+    public ListNode partition(int x){
         ListNode bs = null;
         ListNode be = null;
         ListNode as = null;
         ListNode ae = null;
-        ListNode cur = head;
+        ListNode cur = this.head;
         while (cur != null) {
-            if (cur.val < k) {
+            if (cur.val < x) {
+                //判断是否为第一次加入
                 if (bs == null) {
                     bs = cur;
                     be = cur;
@@ -60,6 +113,7 @@ public class TestListNode {
                     be = be.next;
                 }
             } else {
+                //判断是否为第一次加入
                 if (as == null) {
                     as = cur;
                     ae = cur;
@@ -68,59 +122,86 @@ public class TestListNode {
                     ae = ae.next;
                 }
             }
+            cur = cur.next;
         }
-
+        //判断是否k是否小于所以节点
         if (bs == null) {
             return as;
         }
+        //连在一起
         if (be != null) {
             be.next = as;
         }
-        if (be.next != null) {
-            be.next = null;
+        if (as != null) {
+            ae.next = null;
         }
         return bs;
     }
-    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if(headA == null || headB == null) {
-            return null;
+
+    public ListNode deleteDuplication(){
+        ListNode cur = this.head;
+        ListNode newHead = new ListNode(-1);
+        ListNode tmp = newHead;
+        while (cur != null) {
+            //重复的节点
+            if(cur.next != null && cur.data == cur.next.data) {
+                //每一次都需要判断cur.next
+                while (cur.next != null && cur.data == cur.next.data) {
+                    cur = cur.next;
+                }
+            } else {
+                tmp.next = cur;
+                tmp = tmp.next;
+                cur = cur.next;
+            }
         }
-        ListNode pL = headA;//永远指向长的单链表
-        ListNode pS = headB;//永远指向短的单链表
-        int lenA = 0;
-        int lenB = 0;
-        //求的lenA  lenB
-        while (pL != null) {
-            lenA++;
-            pL = pL.next;
-        }
-        while (pS != null) {
-            lenB++;
-            pS = pS.next;
-        }
-        //pl、ps为空了
-        pL = headA;
-        pS = headB;
-        //差值-》最长的单链表先走len步
-        int len = lenA-lenB;
-        if(len < 0) {
-            pL = headB;
-            pS = headA;
-            len = lenB-lenA;
-        }
-        //让pL先走len步
-        for (int i = 0; i < len; i++) {
-            pL = pL.next;
-        }
-        //开始一起走  (pL  != pS ) {一人一步走}
-        while (pL != pS) {
-            pL = pL.next;
-            pS = pS.next;
-        }
-        return pL;
+        //最后一个节点如果也是重复的，需要将tmp.next置为空
+        tmp.next = null;
+        return newHead.next;
     }
 
+    public boolean deleteDuplication(){
+        //为空
+        if (head == null) {
+            return false;
+        }
+        //一个数
+        if (head.next == null) {
+            return true;
+        }
+        //1、找到单链表的中间节点
+        ListNode fast = this.head;
+        ListNode slow = this.head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        //2、反转单链表
+        ListNode cur = slow.next;
+        while (cur != null) {
+            ListNode curNext = cur.next;
+            cur.next = slow;
+            slow = cur;
+            cur = curNext;
+        }
+        //3、fast/slow往前    head往后走
+        while (this.head != slow) {
+            if (this.head.val != slow.val) {
+                return false;
+            }
+            //偶数个数
+            if (this.head.next == slow) {
+                return true;
+            }
+            this.head = this.head.next;
+            slow = slow.next;
+        }
+        return true;
+    }
 
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+
+    }
 
 
 }
