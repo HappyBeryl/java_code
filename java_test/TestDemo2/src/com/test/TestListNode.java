@@ -2,9 +2,7 @@ package com.test;
 
 import sun.reflect.generics.tree.Tree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class TestListNode {
     public class ListNode {
@@ -310,7 +308,33 @@ public class TestListNode {
             }
         }
 
-   
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1,"hha");
+        map.put(2,"heh");
+        map.put(3,"xix");
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
+
+    public static void insertSort(int[] array) {
+        int j = 0;
+        for (int i = 1; i < array.length; i++) {
+            int tmp = array[i];
+            for (j = i-1; j < array.length; j++) {
+                if (array[j] >tmp) {
+                    array[j+1] = array[j];
+                } else {
+                    break;
+                }
+            }
+            array[j+1] = tmp;
+        }
+    }
+
+
+
 
 
 
