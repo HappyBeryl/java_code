@@ -1,10 +1,26 @@
 package com.test;
 
+import sun.reflect.generics.tree.Tree;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 public class TestListNode {
     public class ListNode {
       int val;
       ListNode next;
       ListNode(int x) { val = x; }
+    }
+
+    public class TreeNode {
+        TreeNode left;
+        TreeNode right;
+        int value;
+
+        public TreeNode(int val) {
+            this.value = val;
+        }
     }
 
     ListNode head = null;
@@ -144,9 +160,9 @@ public class TestListNode {
         ListNode tmp = newHead;
         while (cur != null) {
             //重复的节点
-            if(cur.next != null && cur.data == cur.next.data) {
+            if(cur.next != null && cur.val == cur.next.val) {
                 //每一次都需要判断cur.next
-                while (cur.next != null && cur.data == cur.next.data) {
+                while (cur.next != null && cur.val == cur.next.val) {
                     cur = cur.next;
                 }
             } else {
@@ -160,7 +176,7 @@ public class TestListNode {
         return newHead.next;
     }
 
-    public boolean deleteDuplication(){
+    public boolean deleteDuplication1(){
         //为空
         if (head == null) {
             return false;
@@ -199,9 +215,105 @@ public class TestListNode {
         return true;
     }
 
-    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-
+    void preOrderTraversal(TreeNode root){
+        if(root == null) {
+            return;
+        }
+        System.out.print(root.value+" ");
+        preOrderTraversal(root.left);
+        preOrderTraversal(root.right);
     }
 
+    void preOrderTraversal2(TreeNode root){
+        TreeNode cur = root;
+        Stack<TreeNode> stack = new Stack<>();
+        while (cur != null && !stack.empty()) {
+            while (cur != null) {
+                stack.push(root);
+                System.out.println(cur.value);
+                cur = cur.left;
+            }
+           cur = stack.pop();
+           cur = cur.right;
+        }
+    }
+    public void inorderTraversal2(TreeNode root){
+        TreeNode cur = root;
+        Stack<TreeNode> stack = new Stack<>();
+        while (cur != null && !stack.empty()) {
+            while (cur != null) {
+                stack.push(root);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            System.out.println(cur.value);
+            cur = cur.right;
+        }
+    }
 
-}
+    public void postorderTraversal1(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        TreeNode prev = null;
+        while (cur != null || !stack.empty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.peek();
+            if (cur.right == null || cur.right == prev) {
+                stack.pop();
+                System.out.println(cur.value);
+                prev = cur;
+                cur = null;
+            } else {
+                cur = cur.right;
+            }
+        }
+    }
+
+    public void postorderTraversal2(TreeNode root) {
+        TreeNode cur = root;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode prev = null;  //记录打印过的节点
+        while (cur != null && !stack.empty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.peek();
+            if (cur.right == null || cur.right == prev) {
+                stack.pop();
+                System.out.println(cur.value);
+                prev = cur;
+                cur = null;
+            } else {
+                cur = cur.right;
+            }
+        }
+    }
+
+    public void levelOrder(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        if(root != null) {
+            queue.offer(root);
+        }
+        while(!queue.isEmpty()) {
+                TreeNode cur = queue.poll();
+                System.out.println(cur.value);;
+                if(cur.left != null) {
+                    queue.offer(cur.left);
+                }
+                if(cur.right != null) {
+                    queue.offer(cur.right);
+                }
+            }
+        }
+
+   
+
+
+
+
+
+    }
