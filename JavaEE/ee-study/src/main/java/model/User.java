@@ -1,4 +1,4 @@
-package model;
+package frank.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +10,9 @@ import java.util.Date;
 @Setter
 @ToString
 public class User {
+
     private String username;
     private String password;
     private Date birthday;
+
 }
