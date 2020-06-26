@@ -173,6 +173,9 @@ class Test1 {
         System.out.println(o.equals("Fred"));
     }
 }
+
+
+
 class Test {
     public static void main1(String [] args){
         System.out.println(new B().getValue());
@@ -208,7 +211,14 @@ class Test {
         }
     }
 
+    //可变参数编程
+    public static void func(int ... m) {
+        Arrays.sort(m);
+    }
 
-
-
+    public static void main2(String[] args) {
+        int[] arr = new int[]{3,2,1,5,4};
+        func(arr);
+        System.out.println(Arrays.toString(arr));
+    }
 }
