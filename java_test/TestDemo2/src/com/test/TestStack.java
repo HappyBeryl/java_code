@@ -115,6 +115,13 @@ public class TestStack {
         TreeNode left;
         TreeNode right;
         int val;
+
+        public TreeNode(char c) {
+
+        }
+
+        public TreeNode(int i) {
+        }
     }
 
     //先序遍历
@@ -288,6 +295,181 @@ public class TestStack {
         if(A == null || A.val != B.val) return false; //A越过了B
         return isSameTree1(A.left, B.left) && isSameTree(A.right, B.right);
     }
+
+    public int maxDepth(TreeNode root){
+        if(root == null) {
+            return 0;
+        }
+        int leftHight = maxDepth(root.left);
+        int rightHight = maxDepth(root.right);
+
+        return leftHight > rightHight
+                ? leftHight + 1 : rightHight + 1;
+    }
+
+    public boolean isBalanced(TreeNode root) {
+        if(root == null) {
+            return true;
+        }
+        int leftHight = maxDepth(root.left);
+        int rightHight = maxDepth(root.right);
+
+        return Math.abs(leftHight-rightHight) <= 1
+                && isBalanced(root.left)
+                && isBalanced(root.right);
+    }
+
+    public boolean isSymmetric(TreeNode root) {
+        if(root == null) {
+            return true;
+        }
+        return isSymmetricChild(root.left,root.right);
+    }
+
+    public boolean isSymmetricChild(TreeNode leftTree,TreeNode rightTree) {
+        if (leftTree == null && rightTree != null ||
+                leftTree != null && rightTree != null) {
+            return false;
+        }
+        if (leftTree == null && rightTree == null) {
+            return true;
+        }
+        return leftTree.val == rightTree.val &&
+                isSymmetricChild(leftTree.left,rightTree.right)
+                &&isSymmetricChild(leftTree.right,rightTree.left);
+    }
+    //判断一颗树是否为完全二叉树：依赖队列
+    public static boolean isCompleteTree(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        if (root != null) {
+            queue.offer(root);
+        }
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.poll();
+            if (cur != null) {
+                queue.offer(cur.left);
+                queue.offer(cur.right);
+            }else {
+                break;
+            }
+        }
+
+        //判断队列中的元素是否全为空
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.peek();
+            if (cur != null) {
+                return false;
+            } else {
+                queue.poll();
+            }
+        }
+        return true;
+    }
+
+    static int i = 0;
+    TreeNode buildTree(String str){
+        TreeNode root = null;
+        if (str.charAt(i) != '#') {
+            root = new TreeNode(str.charAt(i));
+            i++;
+            root.left = buildTree(str);
+            root.right = buildTree(str);
+        } else {
+            i++;
+        }
+        return root;
+    }
+
+    public  TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) {
+            return null;
+        }
+        if (root == p || root == q) {
+            return root;
+        }
+        //leftTree和rightTree接收的就是返回的root
+        TreeNode leftTree = lowestCommonAncestor(root.left, p, q);
+        TreeNode rightTree = lowestCommonAncestor(root.right, p, q);
+        if (leftTree != null && rightTree != null) {
+            return root;
+        }
+
+        if (leftTree != null) {
+            return leftTree;
+        }
+
+        if (rightTree != null) {
+            return rightTree;
+        }
+        return null;
+    }
+
+    TreeNode prev = null;
+    public void ConvertChild(TreeNode pCur) {
+        if (pCur == null) {
+            return;
+        }
+        ConvertChild(pCur.left);
+        pCur.left = prev;
+        if (pCur != null) {
+            prev.right = pCur;
+        }
+        prev = pCur;
+        ConvertChild(pCur.right);
+    }
+
+    public TreeNode Convert(TreeNode pRootOfTree){
+        ConvertChild(pRootOfTree);
+        TreeNode head = pRootOfTree;
+        while (head != null && head.left != null) {
+            head = head.left;
+        }
+        return head;
+    }
+
+    //根据一棵树的前序遍历与中序遍历构造二叉树
+    int preIndex= 0;
+    public TreeNode buildTreeChild(int[] preorder,int[] inorder,int inbegin, int inend) {
+
+        //终止条件 判断是否有左树或者右树
+        if (inbegin > inend) {
+            return null;
+        }
+
+        //new 根节点
+        TreeNode root = new TreeNode(preorder[preIndex]);
+
+        //在中序遍历找到pi所在下标元素
+        int rootIndex = findIndexOfInorder(inorder, inbegin, inend, preorder[preIndex]);
+        preIndex++;
+        root.left = buildTreeChild(preorder, inorder, inbegin,rootIndex-1);
+        root.right = buildTreeChild(preorder, inorder, rootIndex+1,inend);
+        return root;
+    }
+
+    private int findIndexOfInorder(int[] inorder, int inbegin, int inend, int val) {
+        for (int i = inbegin; i <= inend; i++) {
+            if (inorder[i] == val) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        if (preorder == null || inorder == null) {
+            return null;
+        }
+        if (preorder.length == 0 || inorder.length == 0) {
+            return null;
+        }
+        return buildTreeChild(preorder, inorder, 0, inorder.length-1);
+    }
+
+
 
 
 }
