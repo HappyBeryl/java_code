@@ -1,5 +1,6 @@
 package com.test;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -468,6 +469,234 @@ public class TestStack {
         }
         return buildTreeChild(preorder, inorder, 0, inorder.length-1);
     }
+
+    //堆排序
+    public static void heapSort(int[] array){
+        createHeap(array);
+        int end = array.length-1;
+        while (end > 0 ) {
+            int tmp = array[end];
+            array[end] = array[0];
+            array[0] = tmp;
+            adjustDown(array, 0, end);
+            end--;
+        }
+    }
+
+    private static void createHeap(int[] array) {
+        for (int i = (array.length-1-1)/2; i >= 0; i--) {
+            adjustDown(array, i, array.length);
+        }
+    }
+
+    private static void adjustDown(int[] array, int root, int len) {
+        int child = 2 * root + 1;
+        while (child < len) {
+            if ((child+1 < len) && array[child] < array[child+1]) {
+                child++;
+            }
+            if (array[child] > array[root]) {
+                int tmp = array[child];
+                array[child] = array[root];
+                array[root] = tmp;
+            }
+            root = child;
+            child = 2 * root + 1;
+        }
+    }
+
+    public static void insertSort(int[] array) {
+        int j = 0;
+        for (int i = 1; i < array.length; i++) {
+            int tmp = array[i];
+            for (j = i-1; j >= 0; j--) {
+                if (array[j] > tmp) {
+                    array[j+1] = array[j];
+                } else {
+                    break;
+                }
+            }
+            array[j+1] = tmp;
+        }
+    }
+    public static void shell(int[] array, int gap) {
+        for (int i = gap; i < array.length; i++) {
+            int tmp = array[i];
+            int j = 0;
+            for (j = i-gap; j >= 0; j -= gap) {
+                if (array[j] > tmp) {
+                    array[j+gap] = array[j];
+                } else {
+                    break;
+                }
+            }
+            array[j+gap] = tmp;
+        }
+    }
+
+    public static void shellSort(int[] array) {
+        //分的组数
+        int[] drr = {5,3,1};
+        for (int i = 0; i < drr.length; i++) {
+            shell(array, drr[i]);
+        }
+    }
+
+    public static void quickSort(int[] array) {
+        quick1(array, 0, array.length-1);
+    }
+
+    private static void quick(int[] array, int l, int h) {
+        if (l >= h) {
+            return;
+        }
+        int pivot = partion(array, l, h);
+        quick(array, l, pivot-1);
+        quick(array, pivot+1, h);
+    }
+
+    private static int partion(int[] array, int start, int end) {
+        int tmp = array[start];
+        while (start < end) {
+            while ((start <end) && array[end] >= tmp) {
+                end--;
+            }
+            if (start >= end) {
+                break;
+            } else {
+                array[start] = array[end];
+            }
+
+            while ((start <end) && array[start] <= tmp) {
+                start++;
+            }
+            if (start >= end) {
+                break;
+            } else {
+                array[end] = array[start];
+            }
+        }
+        array[start] = tmp;
+        return start;
+    }
+
+    public static void quick1(int[] array, int low, int high) {
+        Stack<Integer> stack = new Stack<>();
+        int pivot = partion(array, low, high);
+        if (pivot > low+1) {
+            stack.push(low);
+            stack.push(pivot-1);
+        }
+        if (pivot < high-1) {
+            stack.push(pivot+1);
+            stack.push(high);
+        }
+
+        while (!stack.empty()) {
+            high = stack.pop();
+            low = stack.pop();
+
+            pivot = partion(array, low, high);
+            if (pivot > low+1) { //左边有两个元素可以入栈
+                stack.push(low);
+                stack.push(pivot-1);
+            }
+            if (pivot < high-1) { //右边有两个元素可以入栈
+                stack.push(pivot+1);
+                stack.push(high);
+            }
+        }
+    }
+
+    public static void mergeSort(int[] array) {
+        mergeSortInternal(array,0,array.length-1);
+    }
+
+    public static void mergeSortInternal(int[] array,int low,int high) {
+        if (low >= high) {
+            return;
+        }
+        int mid = (low+high)/2;
+        mergeSortInternal(array, low, mid);
+        mergeSortInternal(array,mid+1,high);
+        merge(array,low,mid,high);
+    }
+
+    private static void merge(int[] array, int low, int mid, int high) {
+        int s1 = low;
+        int s2 = mid+1;
+        int[] tmpArr = new int[high-low+1];
+        int i = 0;
+        while (s1 <= mid && s2 <= high) {
+            if (array[s1] < array[s2]) {
+                tmpArr[i++] = array[s1++];
+            } else {
+                tmpArr[i++] = array[s2++];
+            }
+        }
+        //S1还有数据的情况下
+        while (s1 <= mid) {
+            tmpArr[i++] = array[s1++];
+        }
+        //s2还有数据的情况下
+        while (s2 <= high) {
+            tmpArr[i++] = array[s2++];
+        }
+
+        for (int j = 0; j < tmpArr.length; j++) {
+            array[j+low] = tmpArr[j];
+        }
+    }
+
+    public static void mergeSort1(int[] array) {
+        for (int i = 0; i < array.length; i*=2) {
+            merge1(array, i);
+        }
+    }
+
+    private static void merge1(int[] array, int gap) {
+        int[] tmpArr = new int[array.length];
+        int k = 0;
+        int s1 = 0;
+        int e1 = s1+gap-1;
+        int s2 = e1+1;
+        int e2 = s2+gap-1 < array.length ? s2+gap-1 : array.length-1;
+        while (s2 < array.length) {
+            while (s1 <= e1 && s2 <= e2) {
+                if (array[s1] <= array[s2]) {
+                    tmpArr[k++] = array[s1++];
+                } else {
+                    tmpArr[k++] = array[s2++];
+                }
+            }
+            while (s1 <= e1) {
+                tmpArr[k++] = array[s1++];
+            }
+            while (s2 <= e2) {
+                tmpArr[k++] = array[s2++];
+            }
+             s1 = e2+1;
+             e1 = s1+gap-1;
+             s2 = e1+1;
+             e2 = s2+gap-1 < array.length ? s2+gap-1 : array.length-1;
+        }
+        while (s1 <= array.length-1) {
+            tmpArr[k++] = array[s1++];
+        }
+
+        for (int i = 0; i < tmpArr.length; i++) {
+            array[i] = tmpArr[i];
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{1,5,4,6,3,7,2,9,8};
+        quickSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+
+
 
 
 
