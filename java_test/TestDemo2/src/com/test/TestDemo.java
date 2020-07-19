@@ -1,224 +1,296 @@
 package com.test;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Vector;
+import javafx.scene.chart.LineChart;
 
-import static com.sun.xml.internal.ws.util.VersionUtil.compare;
+import javax.smartcardio.TerminalFactory;
+import javax.xml.soap.Text;
+import java.util.*;
 
 public class TestDemo {
 
-    //阶乘
-    public static int factor(int n) {
-        if (n == 1) {
-            return 1;
+    class Node {
+        int val;
+        Node next;
+
+        public Node(int val) {
+            this.val = val;
         }
-        return n * factor(n - 1);
     }
 
-    public static int fibonacci(int n) {
-        if (n == 1 || n == 2) {
-            return 1;
+    Node head = null;
+
+    public void removeAllKey(int key) {
+        Node prev = head;
+        Node cur = head.next;
+        while (cur != null) {
+            if (prev.next.val == key) {
+                prev.next = cur.next;
+                cur = cur.next;
+            } else {
+                prev = cur;
+                cur = cur.next;
+            }
         }
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
-
-    public static int fibonacci2(int n) {
-        int f1 = 1;
-        int f2 = 1;
-        int f3 = 1;
-        for (int i = 3; i <= n; i++) {
-            f3 = f2 + f1;
-            f1 = f2;
-            f2 = f3;
+        if (head.val == key) {
+            head = head.next;
         }
-        return f3;
     }
 
-    public static int frogjump(int n) {
-        if (n == 1 || n == 2) {
-            return n;
+    public Node reverseList() {
+        if (head == null) {
+            return null;
         }
-//		int f1 = 1;
-//		int f2 = 2;
-//		int f3 = 0;
-//		for(int i=3; i<=n; i++) {
-//			f3 = f2+f1;
-//			f1 = f2;
-//			f2 = f3;
-//		}
-//		return f3;
-        return frogjump(n - 1) + frogjump(n - 2);
+        Node cur = head;
+        Node prev = null;
+        Node newHead = null;
+        while (cur != null) {
+            Node curNext = cur.next;
+            if (curNext == null) {
+                newHead = cur;
+            }
+            cur.next = prev;
+            prev = cur;
+            curNext = cur;
+        }
+        return newHead;
     }
 
-    static int a = 100;
-    int b = 20;
-
-    public static void main1(String[] args) {
-        a = 10;
-        //   b = 10; //error
-        System.out.println(a);
+    public Node middleNode() {
+        Node fast = head;
+        Node slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
     }
 
-    public void func() {
-        a = 10;
+    public Node FindKthToTail(int k) {
+        Node fast = head;
+        Node slow = head;
+        for (int i = 0; i < k-1; i++) {
+            if (fast.next == null) {
+                return null;
+            }
+            fast = fast.next;
+        }
+        while (fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
     }
 
-    private String removeFrontZero(String num) {
-        int start = 0;
-        for (int i = 0; i < num.length(); i++) {
-            if (num.charAt(i) == '0') {
-                start++;
+    public  Node merge(Node headA, Node headB) {
+        Node newHead = new Node(-1);
+        Node tmp = newHead;
+        while (headA != null && headB != null) {
+            if (headA.val < headB.val) {
+                tmp.next = headA;
+                headA = headA.next;
+                tmp = tmp.next;
+            } else {
+                tmp.next = headB;
+                headB = headB.next;
+                tmp = tmp.next;
+            }
+        }
+        if (headA == null) {
+            tmp.next = headB;
+        }
+        if (headB == null) {
+            tmp.next = headA;
+        }
+        return newHead.next;
+    }
+
+    public Node delete() {
+        Node cur = head;
+        Node newHead = new Node(-1);
+        Node tmp = newHead;
+        while (cur != null) {
+            if (cur.next != null && cur.val == cur.next.val) {
+                while (cur.next != null && cur.val == cur.next.val) {
+                    cur = cur.next;
+                }
+            } else {
+                tmp.next = cur;
+                tmp = tmp.next;
+                cur = cur.next;
+            }
+        }
+        tmp.next = null;
+        return newHead.next;
+    }
+
+    public boolean hui() {
+        if (head == null) {
+            return false;
+        }
+        if (head.next == null) {
+            return true;
+        }
+        Node fast = head;
+        Node slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        Node cur = slow.next;
+        while (cur != null) {
+            Node curNext = cur.next;
+            cur.next = slow;
+            slow = cur;
+            cur = curNext;
+        }
+        while (slow != head) {
+            if (head.val != slow.val) {
+                return false;
+            }
+            if (head.next == slow) {
+                return true;
+            }
+            head = head.next;
+            slow = slow.next;
+        }
+        return true;
+    }
+
+    public Node copy() {
+        Map<Node, Node> map = new HashMap<>();
+        Node cur = head;
+        while (cur != null) {
+            Node node = new Node(cur.val);
+            map.put(cur, node);
+            cur = cur.next;
+        }
+        cur = head;
+        while (cur != null) {
+            map.get(cur).next = map.get(cur.next);
+            cur = cur.next;
+        }
+        return map.get(head);
+    }
+
+    class TreeNode {
+        TreeNode left;
+        TreeNode right;
+
+        int val;
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
+    //前序遍历
+    public void prevOrder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        System.out.println(root.val);
+        prevOrder(root.left);
+        prevOrder(root.right);
+    }
+
+    public void prevOrder2(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        TreeNode cur = root;
+        Stack<TreeNode> stack = new Stack<>();
+        while (cur != null && !stack.empty()) {
+            while (cur != null) {
+                stack.push(cur);
+                System.out.println(cur.val);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            cur = cur.right;
+        }
+    }
+
+    public void inorder(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        while (cur != null && !stack.empty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            System.out.println(cur.val);
+            cur = cur.right;
+        }
+    }
+
+    public void postOrder(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        TreeNode prev = null;
+        while (cur != null && !stack.empty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.peek();
+            if (cur.right == null && cur.right ==prev) {
+                stack.pop();
+                System.out.println(cur.val);
+                prev = cur;
+                cur = null;
+            } else {
+                cur = cur.right;
+            }
+        }
+    }
+
+    //层序
+    private void levelOrder(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        if (root != null) {
+            queue.offer(root);
+        }
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.poll();
+            System.out.println(cur.val);
+            if (cur.left != null) {
+                queue.offer(cur.left);
+            }
+            if (cur.right != null) {
+                queue.offer(cur.right);
+            }
+        }
+    }
+
+    public boolean isCompleteTree(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        if (root != null) {
+            queue.offer(root);
+        }
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.poll();
+            if (cur != null) {
+                queue.offer(cur.left);
+                queue.offer(cur.right);
             } else {
                 break;
             }
         }
-        return num.substring(start);
-    }
 
-    public int compares(String str1, String str2) {
-        removeFrontZero(str1);
-        removeFrontZero(str2);
-        //先根据长度进行判断
-        if (str1.length() > str2.length()) {
-            return 1;
-        } else if (str1.length() < str2.length()) {
-            return -1;
-        } else {
-            //长度相等的时候
-            for (int i = 0; i < str1.length(); i++) {
-                if (str1.charAt(i) - str2.charAt(i) > 0) {
-                    return 1;
-                } else if (str1.charAt(i) - str2.charAt(i) < 0) {
-                    return -1;
-                }
-            }
-            return 0;
-        }
-    }
-
-    public int compareVersion(String version1, String version2) {
-        //以.进行分割 返回数组
-        String s1[] = version1.split("\\.");
-        String s2[] = version2.split("\\.");
-        //判断是否相等
-        int i = 0;
-        int j = 0;
-        while (i < s1.length || j < s2.length) {
-            String str1 = i < s1.length ? s1[i] : "0";
-            String str2 = j < s2.length ? s2[i] : "0";
-            int ret = compares(str1, str2);
-            if (ret == 0) {
-                i++;
-                j++;
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.peek();
+            if (cur != null) {
+                return false;
             } else {
-                return ret;
+                queue.poll();
             }
         }
-        return 0;
+        return true;
     }
 
-    static int[] weight;
-    static int N;
-    static int count = 0;
-
-    public static void main2(String[] args) {
-        Scanner input = new Scanner(System.in);
-        while (input.hasNext()) {
-            N = input.nextInt();
-            weight = new int[N + 1];
-            for (int i = 1; i <= N; i++) {
-                weight[i] = input.nextInt();
-            }
-            count(40, N);
-            System.out.println(count);
-        }
-    }
-
-    public static void count(int s, int n) {
-        //如果正好装满
-        if (s == 0) {
-            ++count;
-            return;
-
-        }
-        //是s<0或n<1则不能完成
-        if (s < 0 || (s > 0 && n < 1))
-            return;
-        count(s - weight[n], n - 1);
-        count(s, n - 1);
-    }
-
-    public static void main22(String[] args) {
-        byte b1 = 1, b2 = 2, b3, b6;
-        final byte b4 = 4, b5 = 6;
-        b6 = b4 + b5;
-        //b3 = b1 + b2; 类型转换异常
-
-    }
+    
 
 
 
-
-}
-
-class Test1 {
-    public static void main1(String[] args) {
-        Object o = new Object(){
-            public boolean equals(Object obj) {
-                return true;
-            }
-        };
-        System.out.println(o.equals("Fred"));
-    }
-}
-
-
-
-class Test {
-    public static void main1(String [] args){
-        System.out.println(new B().getValue());
-    }
-    static class A{
-        protected int value;
-        public A(int v) {
-            setValue(v);
-        }
-        public void setValue(int value){
-            this.value = value;
-        }
-        public int getValue(){
-            try{
-                value++;
-                return value;
-            } catch(Exception e){
-                System.out.println(e.toString());
-            } finally {
-                this.setValue(value);
-                System.out.println(value);
-            }
-            return value;
-        }
-    }
-     static class B extends A{
-        public B() {
-            super(5);
-            setValue(getValue() - 3);
-        }
-        public void setValue(int value){
-            super.setValue(2 * value);
-        }
-    }
-
-    //可变参数编程
-    public static void func(int ... m) {
-        Arrays.sort(m);
-    }
-
-    public static void main2(String[] args) {
-        int[] arr = new int[]{3,2,1,5,4};
-        func(arr);
-        System.out.println(Arrays.toString(arr));
-    }
 }
