@@ -1,5 +1,9 @@
 package com.test;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 public class TestLinkedList {
     //链表的实现
     class ListNode {
@@ -55,9 +59,6 @@ public class TestLinkedList {
 
     //翻转链表
     public  ListNode reverseList() {
-        if (head == null) {
-            return null;
-        }
         ListNode prev = null;
         ListNode cur = head;
         ListNode newHead = null;
@@ -66,133 +67,71 @@ public class TestLinkedList {
             if (curNext == null) {
                 newHead = cur;
             }
-            prev.next = cur;
+            cur.next = prev;
             prev = cur;
             cur = curNext;
         }
         return newHead;
     }
 
-    //返回链表中间节点
-    public ListNode middleNode() {
-        ListNode fast = head;
-        ListNode slow = head;
-        while (fast != null && fast.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
-        }
-        return slow;
-    }
-
-    public ListNode FindkthtoTail(int k) {
-        if (k < 0 || head == null) {
-            return null;
-        }
-        ListNode fast = head;
-        ListNode slow = head;
-        for (int i = 0; i < k-1; i++) {
-            if (fast.next == null) {
-                return null;
-            }
-            fast = fast.next;
-        }
-        while (fast.next != null) {
-            fast = fast.next;
-            slow = slow.next;
-        }
-        return slow;
-    }
-
-    public ListNode merge(ListNode headA, ListNode headB) {
+    public ListNode deleteDuplication(){
+        ListNode cur = this.head;
         ListNode newHead = new ListNode(-1);
         ListNode tmp = newHead;
-        while (headA != null && headB != null) {
-            if (headA.data < headB.data) {
-                tmp.next = headA;
-                headA = headA.next;
-                tmp = tmp.next;
+        while (cur != null) {
+            //重复的节点
+            if(cur.next != null && cur.data == cur.next.data) {
+                //每一次都需要判断cur.next
+                while (cur.next != null && cur.data == cur.next.data) {
+                    cur = cur.next;
+                }
             } else {
-                tmp.next = headB;
-                headB = headB.next;
+                tmp.next = cur;
                 tmp = tmp.next;
+                cur = cur.next;
             }
         }
-        if (headA == null) {
-            tmp.next = headB;
-        }
-        if (headB == null) {
-            tmp.next = headA;
-        }
+        //最后一个节点如果也是重复的，需要将tmp.next置为空
+        tmp.next = null;
         return newHead.next;
     }
 
-    public ListNode partition(int x) {
-        ListNode bs = null;
-        ListNode be = null;
-        ListNode as = null;
-        ListNode ae = null;
-        ListNode cur = head;
-        while (cur != null) {
-            if (cur.data < x) {
-                if (bs == null) {
-                    bs = cur;
-                    be = cur;
-                } else {
-                    be.next = cur;
-                }
-            }else {
-                if (as == null) {
-                    as = cur;
-                    ae = cur;
-                } else {
-                    ae.next = cur;
-                }
-            }
-            cur = cur.next;
-        }
-        if (bs == null) {
-            return as;
-        }
-        if (as != null) {
-            ae.next = null;
-        }
-        be.next = as;
-        return bs;
+    class TreeNode {
+        int value;
+        TreeNode left;
+        TreeNode right;
     }
 
-   public boolean deleteDuplication() {
-        if (head == null) {
-            return false;
+    public void preorderTraversal1(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        while (cur != null || !stack.empty()) {
+            while (cur != null) {
+                stack.push(cur);
+                System.out.println(cur.value);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            cur = cur.right;
         }
-        if (head.next == null) {
-            return true;
-        }
-        ListNode fast = head;
-        ListNode slow = head;
-        while (fast.next != null && fast.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
-        }
+    }
 
-       ListNode cur = slow.next;
-       while (slow != null) {
-            ListNode curNext = cur.next;
-            cur.next = slow;
-            slow = cur;
-            cur = curNext;
+    public void levelOrder(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        if(root != null) {
+            queue.offer(root);
         }
-        while (head != slow) {
-            if (head.data != slow.data) {
-                return false;
+        while(!queue.isEmpty()) {
+            TreeNode cur = queue.poll();
+            System.out.println(cur.value);
+            if(cur.left != null) {
+                queue.offer(cur.left);
             }
-            if (head.next == slow) {
-                return true;
+            if(cur.right != null) {
+                queue.offer(cur.right);
             }
-            head = head.next;
-            slow = slow.next;
         }
-       return true;
-   }
+    }
 
 
 }
