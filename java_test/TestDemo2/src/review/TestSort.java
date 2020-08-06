@@ -190,7 +190,7 @@ public class TestSort {
         }
     }
 
-    
+
     public static void main(String[] args) {
         int[] array = new int[]{1,4,3,5,2,9,7,8,6,0};
         insertSort(array);
