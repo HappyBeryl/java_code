@@ -134,4 +134,20 @@ public class TestLinkedList {
     }
 
 
+    public boolean hasCycle() {
+        ListNode fast = this.head;
+        ListNode slow = this.head;
+        while (fast != null && fast.next != null)  {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                break;
+            }
+        }
+        if (fast == null || fast.next ==null) {
+            return false;
+        }
+        return true;
+    }
+
 }
