@@ -1,38 +1,10 @@
 package eleven.com;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main {
-
-    public int eraseOverlapIntervals (int[][] intervals) {
-        // write code here
-        if (intervals.length <= 1) {
-            return 0;
-        }
-        Arrays.sort(intervals, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return o1[0]-o2[0];
-            }
-        });
-        int count = 0;
-        int index = 0;
-        for (int i = 1; i < intervals.length; i++) {
-            if (intervals[index][1] > intervals[i][0]) {
-                count++;
-                if (intervals[index][1] > intervals[i][1]) {
-                    index = i;
-                }
-            } else {
-                index = i;
-            }
-        }
-        return count;
-    }
-
-    public static void main2(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int m = sc.nextInt();
         int n = sc.nextInt();
@@ -42,73 +14,52 @@ public class Main {
                 arr[i][j] = sc.nextInt();
             }
         }
-        if (arr == null || arr.length == 0) {
-            System.out.println(0);
-            return;
-        }
-        int max = 0;
-        int tmp[][] = new int[arr.length][arr[0].length];
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[0].length; j++) {
-                max = Math.max(max, func(arr, tmp, i+1, j, arr[i][j])+1);//下
-                max = Math.max(max, func(arr, tmp, i-1, j, arr[i][j])+1); //上
-                max = Math.max(max, func(arr, tmp, i, j+1, arr[i][j])+1);//右
-                max = Math.max(max, func(arr, tmp, i, j-1, arr[i][j])+1);//左
-            }
-        }
-        System.out.println(max);
-    }
-
-    private static int func(int[][] arr, int[][] tmp, int i, int j, int n) {
-        if (i < 0 || i >= arr.length || j < 0 || j >= arr[0].length || arr[i][j] >= n) {
-            return 0;
-        }
-        if (tmp[i][j] == 0) {
-            tmp[i][j] = func(arr, tmp, i+1, j, arr[i][j])+1;
-            tmp[i][j] =Math.max(tmp[i][j], func(arr, tmp,i, j+1,arr[i][j])+1);
-            tmp[i][j] =Math.max(tmp[i][j], func(arr, tmp,i-1, j,arr[i][j])+1);
-            tmp[i][j] =Math.max(tmp[i][j], func(arr, tmp,i, j-1,arr[i][j])+1);
-        }
-        return tmp[i][j];
+        System.out.println("NO");
     }
 
     public static void main1(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        int count = 0;
-        for (int i = 0; i < str.length()-1; i++) {
-            for (int j = 0; j < str.length()-1; j++) {
-                if (str.substring(i,j).equals("Good")) {
-                    count++;
-                }
-            }
+        String[] arr = str.split(" ");
+        String op = arr[1]; //操作符号
+        String fz = arr[0];
+        String fm = arr[2];
+        int a = Integer.parseInt(fz.split("/")[0]);
+        int b = Integer.parseInt(fz.split("/")[1]);
+        int c = Integer.parseInt(fm.split("/")[0]);
+        int d = Integer.parseInt(fm.split("/")[1]);
+        int x = 0;
+        int y = 0; //x/y
+        if (op.equals("+")) {
+            y = b*d/func(b,d);
+            x = y/b*+y/d*c;
+        } else if (op.equals("-")) {
+            y = b*d/func(b,d);
+            x = y/b*a-y/d*c;
+        } else if (op.equals("*")) {
+            x = a*c;
+            y = b*d;
+        } else if (op.equals("/")){
+            x = a*d;
+            y = b*c;
         }
-        System.out.println(count);
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
-        String good = "Good";
-        int count = 0;
-        int num = 0; //相等个数
-        int j = 0;
-        int k = 0;
-        for (k > str.length()) {
-                if (num == good.length()) {
-                    num = 0;
-                    count++;
-                }
-                if (j == good.length()) {
-                    break;
-                }
-                if (str.charAt(k) == good.charAt(j)) {
-                    k++;
-                    str.sub
-                }
-                else {
-
-                }
+        int tmp = Math.abs(func(x,y));
+        x /= tmp;
+        y /= tmp;
+        if (x == y || x == -y) {
+            System.out.println(x/y);
+        } else if (y == 0) {
+            System.out.println(0);
+        } else {
+            System.out.println(x+"/"+y);
         }
     }
+
+    public static int func(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return func(b, a%b);
+    }
+
 }
