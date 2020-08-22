@@ -1,65 +1,112 @@
 package eleven.com;
-
+/*
+5
+BA
+aOWVXARgUbJDG
+OPPCSKNS
+HFDJEEDA
+ABBABBBBAABBBAABAAA
+ */
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int m = sc.nextInt();
         int n = sc.nextInt();
-        int[][] arr = new int[m][n];
+        int m = sc.nextInt();
+        if (n<2||m>105) {
+            return;
+        }
+        int[] arr = new int[n];
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[0].length; j++) {
-                arr[i][j] = sc.nextInt();
+            arr[i] = i+1;
+        }
+
+        for (int i = 0; i < m; i++) {
+            int bo = sc.nextInt();
+            if (bo == 1) {
+                int tmp = arr[0];
+                for (int j = 0; j < arr.length-1; j++) {
+                    arr[j] = arr[j+1];
+                }
+                arr[arr.length-1] = tmp;
+            }
+            int t = 0;
+            if (bo == 2) {
+                for (int j = 0; j < arr.length; j+=2) {
+                    t = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = t;
+                }
             }
         }
-        System.out.println("NO");
+        for (int i = 0; i < arr.length-1; i++) {
+            System.out.println(arr[i] + " ");
+        }
+        System.out.print
+                (arr[arr.length-1]);
+    }
+
+
+    public static void main11(String[] args) {
+        int num = 5;
+        int count = 0;
+        String  str = null;
+        String[] strarry= new String[]{"BA","aOWVXARgUbJDG",
+                "OPPCSKNS",
+                "HFDJEEDA",
+                "ABBABBBBAABBBAABAAA"};
+        while (num != 0) {
+            for (int i = 0; i < num; i++) {
+              str = strarry[i];
+            }
+            char[] arr = str.toCharArray();
+            int tmp = 0;
+            if (arr.length <= 10) {
+                for (int i = 0; i < arr.length; i++) {
+                    char ch = arr[i];
+                    if (ch >= 65 && ch <= 122) {
+                        tmp++;
+                    } else {
+                        break;
+                    }
+                }
+                if (tmp == arr.length) {
+                    count++;
+                }
+            }
+            num--;
+        }
+        System.out.println(count);
     }
 
     public static void main1(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
-        String[] arr = str.split(" ");
-        String op = arr[1]; //操作符号
-        String fz = arr[0];
-        String fm = arr[2];
-        int a = Integer.parseInt(fz.split("/")[0]);
-        int b = Integer.parseInt(fz.split("/")[1]);
-        int c = Integer.parseInt(fm.split("/")[0]);
-        int d = Integer.parseInt(fm.split("/")[1]);
-        int x = 0;
-        int y = 0; //x/y
-        if (op.equals("+")) {
-            y = b*d/func(b,d);
-            x = y/b*+y/d*c;
-        } else if (op.equals("-")) {
-            y = b*d/func(b,d);
-            x = y/b*a-y/d*c;
-        } else if (op.equals("*")) {
-            x = a*c;
-            y = b*d;
-        } else if (op.equals("/")){
-            x = a*d;
-            y = b*c;
+        int num = sc.nextInt();
+        if (num < 1 || num > 2000) {
+            return;
         }
-        int tmp = Math.abs(func(x,y));
-        x /= tmp;
-        y /= tmp;
-        if (x == y || x == -y) {
-            System.out.println(x/y);
-        } else if (y == 0) {
-            System.out.println(0);
-        } else {
-            System.out.println(x+"/"+y);
+        int count = 0;
+        while (num != 1) {
+            String str = sc.nextLine();
+            char[] arr = str.toCharArray();
+            int tmp = 0;
+            if (arr.length <= 10) {
+                for (int i = 0; i < arr.length; i++) {
+                    char ch = arr[i];
+                    if (ch >= 65 && ch <= 122) {
+                        tmp++;
+                    } else {
+                        break;
+                    }
+                }
+                if (tmp == arr.length) {
+                    count++;
+                }
+            }
+            num--;
         }
+        System.out.println(count);
     }
-
-    public static int func(int a, int b) {
-        if (b == 0) {
-            return a;
-        }
-        return func(b, a%b);
-    }
-
 }
