@@ -2,7 +2,7 @@ package eleven.com;
 
 import java.util.*;
 
-public class Main {
+public class Main082402 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
@@ -34,7 +34,7 @@ public class Main {
             System.out.println(score);
         }
     }
-    
+
     public static void main1(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
