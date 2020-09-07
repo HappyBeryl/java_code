@@ -3,7 +3,7 @@ package nine;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class Main0906 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -17,7 +17,7 @@ public class Main {
         }
         int len = 0;
         int k = 0;
-        
+
     }
     static int findMin(int[][] arr) {
         int[] tmp = new int[arr.length*arr[0].length];
