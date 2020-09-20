@@ -54,14 +54,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/nine/Main.java">
+      <file leaf-file-name="Main0919.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/nine/Main0919.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="-80">
+              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/nine/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="28">
+              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -163,6 +172,7 @@
         <option value="$PROJECT_DIR$/src/nine/Mainouyunlian.java" />
         <option value="$PROJECT_DIR$/src/nine/Main091702.java" />
         <option value="$PROJECT_DIR$/src/nine/Main1.java" />
+        <option value="$PROJECT_DIR$/src/nine/Main0919.java" />
         <option value="$PROJECT_DIR$/src/nine/Main.java" />
       </list>
     </option>
@@ -182,7 +192,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-12" />
     <option name="y" value="-12" />
     <option name="width" value="1944" />
@@ -247,18 +257,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="nine.Main" />
-      <module name="offer" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nine.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
+  <component name="RunManager" selected="Application.Main0919">
     <configuration name="Main0825" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="eleven.com.Main0825" />
       <module name="offer" />
@@ -391,6 +390,17 @@
         </pattern>
       </extension>
     </configuration>
+    <configuration name="Main0919" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="nine.Main0919" />
+      <module name="offer" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="Main1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="nine.Main1" />
       <module name="offer" />
@@ -491,12 +501,12 @@
       <item itemvalue="Application.Main091302" />
       <item itemvalue="Application.Main0913023" />
       <item itemvalue="Application.Mainxiaomi" />
-      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Main0919" />
       <item itemvalue="Application.Main1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main0919" />
         <item itemvalue="Application.Main1" />
         <item itemvalue="Application.Main091702" />
         <item itemvalue="Application.Mainxiaomi" />
@@ -533,15 +543,15 @@
       <workItem from="1600070423726" duration="15520000" />
       <workItem from="1600239011945" duration="90000" />
       <workItem from="1600256462624" duration="18550000" />
-      <workItem from="1600495239088" duration="6609000" />
+      <workItem from="1600495239088" duration="9603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160986000" />
+    <option name="totallyTimeSpent" value="163980000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -558,9 +568,9 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48559672" visible="true" weight="0.21180275" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8559671" visible="true" weight="0.21180275" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="1" sideWeight="0.5144033" side_tool="true" visible="true" weight="0.21180275" />
+      <window_info id="Structure" order="1" sideWeight="0.14403293" side_tool="true" visible="true" weight="0.21180275" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -602,7 +612,7 @@
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/nine/Main.java</url>
+          <url>file://$PROJECT_DIR$/src/nine/Main0919.java</url>
           <line>25</line>
           <properties />
           <option name="timeStamp" value="18" />
@@ -612,7 +622,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/eleven/com/Main0825.java" />
     <entry file="file://$PROJECT_DIR$/src/eleven/com/Main0729.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -977,13 +986,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nine/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/nine/Main0919.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="-80">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nine/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
         </state>
       </provider>
     </entry>
