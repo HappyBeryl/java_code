@@ -3,12 +3,12 @@ package nine;
 import java.util.Scanner;
 
 
-class TreeNode {
+class TreeNode1 {
     TreeNode left;
     TreeNode right;
     char val;
 
-    public TreeNode(char val) {
+    public TreeNode1(char val) {
         this.val = val;
     }
 }
