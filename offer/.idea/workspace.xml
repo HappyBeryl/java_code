@@ -12,32 +12,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/nine/Main.java">
+      <file leaf-file-name="Mainzuiyou.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/nine/Mainzuiyou.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="108">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main1.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/nine/Main1.java">
+      <file leaf-file-name="Mainmeitu.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/nine/Mainmeitu.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
-              <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main0912.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/nine/Main0912.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-594">
-              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+              <caret line="64" column="5" lean-forward="true" selection-start-line="31" selection-end-line="64" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -103,6 +91,8 @@
         <option value="$PROJECT_DIR$/src/nine/Main.java" />
         <option value="$PROJECT_DIR$/src/nine/Main0912.java" />
         <option value="$PROJECT_DIR$/src/nine/Main1.java" />
+        <option value="$PROJECT_DIR$/src/nine/Mainweiju.java" />
+        <option value="$PROJECT_DIR$/src/nine/Mainmeitu.java" />
       </list>
     </option>
   </component>
@@ -162,7 +152,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Project/FileAndOs_Monitor" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -187,17 +177,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Main1">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="nine.Main" />
-      <module name="offer" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nine.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
     <configuration name="Main0825" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="eleven.com.Main0825" />
       <module name="offer" />
@@ -352,6 +331,17 @@
         </pattern>
       </extension>
     </configuration>
+    <configuration name="Mainmeitu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="nine.Mainmeitu" />
+      <module name="offer" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="Mainouyunlian" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="nine.Mainouyunlian" />
       <module name="offer" />
@@ -452,13 +442,13 @@
       <item itemvalue="Application.Main091702" />
       <item itemvalue="Application.Main0919" />
       <item itemvalue="Application.Mainxiaomi" />
-      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Mainmeitu" />
       <item itemvalue="Application.Main1" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main1" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Mainmeitu" />
         <item itemvalue="Application.Main0923" />
         <item itemvalue="Application.Main0919" />
         <item itemvalue="Application.Main091702" />
@@ -497,16 +487,15 @@
       <workItem from="1600256462624" duration="18550000" />
       <workItem from="1600495239088" duration="16877000" />
       <workItem from="1600855901160" duration="2716000" />
-      <workItem from="1600945330043" duration="4323000" />
+      <workItem from="1600945330043" duration="6063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178293000" />
+    <option name="totallyTimeSpent" value="180033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -522,14 +511,14 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.76383764" visible="true" weight="0.2180937" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.76383764" visible="true" weight="0.2180937" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" sideWeight="0.23616236" side_tool="true" visible="true" weight="0.2180937" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.85218096" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.85218096" weight="0.0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -893,13 +882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nine/Mainzuiyou.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nine/Mainzijie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
@@ -921,13 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nine/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nine/Main0912.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-594">
@@ -935,13 +910,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nine/Main1.java">
+    <entry file="file://$PROJECT_DIR$/src/nine/Mainweiju.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        <state relative-caret-position="327">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nine/Mainzuiyou.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nine/Mainmeitu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="64" column="5" lean-forward="true" selection-start-line="31" selection-end-line="64" selection-end-column="5" />
         </state>
       </provider>
     </entry>
