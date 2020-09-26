@@ -21,11 +21,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mainmeitu.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Mainmeitu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nine/Mainmeitu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="64" column="5" lean-forward="true" selection-start-line="31" selection-end-line="64" selection-end-column="5" />
+            <state relative-caret-position="1310">
+              <caret line="64" column="5" lean-forward="true" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/nine/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="19" column="5" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="19" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -88,11 +97,11 @@
         <option value="$PROJECT_DIR$/src/nine/Mainzijie.java" />
         <option value="$PROJECT_DIR$/src/nine/Mainyonghang.java" />
         <option value="$PROJECT_DIR$/src/nine/Main0923.java" />
-        <option value="$PROJECT_DIR$/src/nine/Main.java" />
         <option value="$PROJECT_DIR$/src/nine/Main0912.java" />
         <option value="$PROJECT_DIR$/src/nine/Main1.java" />
         <option value="$PROJECT_DIR$/src/nine/Mainweiju.java" />
         <option value="$PROJECT_DIR$/src/nine/Mainmeitu.java" />
+        <option value="$PROJECT_DIR$/src/nine/Main.java" />
       </list>
     </option>
   </component>
@@ -111,7 +120,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-12" />
     <option name="y" value="-12" />
     <option name="width" value="1944" />
@@ -145,8 +154,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -176,7 +185,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main1">
+  <component name="RunManager" selected="Application.Main0923">
     <configuration name="Main0825" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="eleven.com.Main0825" />
       <module name="offer" />
@@ -439,15 +448,14 @@
       <listeners />
     </configuration>
     <list>
+      <item itemvalue="Application.Main0923" />
       <item itemvalue="Application.Main091702" />
       <item itemvalue="Application.Main0919" />
       <item itemvalue="Application.Mainxiaomi" />
       <item itemvalue="Application.Mainmeitu" />
-      <item itemvalue="Application.Main1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main1" />
         <item itemvalue="Application.Mainmeitu" />
         <item itemvalue="Application.Main0923" />
         <item itemvalue="Application.Main0919" />
@@ -488,22 +496,23 @@
       <workItem from="1600495239088" duration="16877000" />
       <workItem from="1600855901160" duration="2716000" />
       <workItem from="1600945330043" duration="6063000" />
+      <workItem from="1601087208886" duration="2269000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180033000" />
+    <option name="totallyTimeSpent" value="182302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49717057" weight="0.40480593" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.14781906" side_tool="true" visible="true" weight="0.0" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="7" sideWeight="0.14781906" side_tool="true" visible="true" weight="0.0" />
       <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
@@ -511,9 +520,9 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.76383764" visible="true" weight="0.2180937" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.76199263" visible="true" weight="0.22132471" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="1" sideWeight="0.23616236" side_tool="true" visible="true" weight="0.2180937" />
+      <window_info id="Structure" order="1" sideWeight="0.23800738" side_tool="true" visible="true" weight="0.22132471" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -525,6 +534,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49717057" weight="0.40480593" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,13 +575,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/eleven/com/Main0731.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/eleven/com/Main0808.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -866,9 +869,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1242">
           <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -896,13 +896,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nine/Main0923.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nine/Main0923.java" />
     <entry file="file://$PROJECT_DIR$/src/nine/Main0912.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-594">
@@ -914,9 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
           <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -929,8 +920,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nine/Mainmeitu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="64" column="5" lean-forward="true" selection-start-line="31" selection-end-line="64" selection-end-column="5" />
+        <state relative-caret-position="1310">
+          <caret line="64" column="5" lean-forward="true" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nine/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="19" selection-end-column="5" />
         </state>
       </provider>
     </entry>
