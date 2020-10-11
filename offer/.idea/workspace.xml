@@ -12,15 +12,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main0822.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/eleven/com/Main0822.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Main0821.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/eleven/com/Main0821.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -96,14 +87,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main0905.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main0905.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nine/Main0905.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+            <state relative-caret-position="257">
+              <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main1011.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/nine/Main1011.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -120,7 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Main0729.java" />
         <option value="$PROJECT_DIR$/src/eleven/com/Main0729.java" />
         <option value="$PROJECT_DIR$/src/eleven/com/Main0808.java" />
         <option value="$PROJECT_DIR$/src/eleven/com/Main0815.java" />
@@ -168,9 +167,10 @@
         <option value="$PROJECT_DIR$/src/nine/Main1.java" />
         <option value="$PROJECT_DIR$/src/nine/Mainweiju.java" />
         <option value="$PROJECT_DIR$/src/nine/Mainmeitu.java" />
-        <option value="$PROJECT_DIR$/src/nine/Main.java" />
         <option value="$PROJECT_DIR$/src/nine/Mainshuidichou.java" />
         <option value="$PROJECT_DIR$/src/nine/Main0905.java" />
+        <option value="$PROJECT_DIR$/src/nine/Main.java" />
+        <option value="$PROJECT_DIR$/src/nine/Main1011.java" />
       </list>
     </option>
   </component>
@@ -200,9 +200,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,7 +254,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main0923">
+  <component name="RunManager" selected="Application.Main1011">
     <configuration name="Main0825" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="eleven.com.Main0825" />
       <module name="offer" />
@@ -398,6 +398,17 @@
         </pattern>
       </extension>
     </configuration>
+    <configuration name="Main1011" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="nine.Main1011" />
+      <module name="offer" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="Mainjingdong" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="nine.Mainjingdong" />
       <module name="offer" />
@@ -433,17 +444,6 @@
     </configuration>
     <configuration name="Maintuhu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="nine.Maintuhu" />
-      <module name="offer" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nine.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="Mainxiaomi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="nine.Mainxiaomi" />
       <module name="offer" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -520,11 +520,12 @@
       <item itemvalue="Application.Main0923" />
       <item itemvalue="Application.Main091702" />
       <item itemvalue="Application.Main0919" />
-      <item itemvalue="Application.Mainxiaomi" />
       <item itemvalue="Application.Mainmeitu" />
+      <item itemvalue="Application.Main1011" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main1011" />
         <item itemvalue="Application.Mainmeitu" />
         <item itemvalue="Application.Main0923" />
         <item itemvalue="Application.Main0919" />
@@ -567,11 +568,12 @@
       <workItem from="1600945330043" duration="6063000" />
       <workItem from="1601087208886" duration="6210000" />
       <workItem from="1601444455587" duration="464000" />
+      <workItem from="1602407954250" duration="1992000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186707000" />
+    <option name="totallyTimeSpent" value="188699000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="0" />
@@ -579,20 +581,21 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49717057" weight="0.40480593" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.14781906" side_tool="true" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.14458804" side_tool="true" visible="true" weight="0.0" />
       <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8562197" weight="0.0" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.85541195" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.76014763" visible="true" weight="0.22455573" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.75830257" visible="true" weight="0.22778675" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="1" sideWeight="0.2398524" side_tool="true" visible="true" weight="0.22455573" />
+      <window_info id="Structure" order="1" sideWeight="0.24169742" side_tool="true" visible="true" weight="0.22778675" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -600,7 +603,6 @@
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.85218096" weight="0.0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49717057" weight="0.40480593" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -645,13 +647,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/eleven/com/Main0808.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/eleven/com/Main0729.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -1000,11 +995,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nine/Main0905.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        <state relative-caret-position="257">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nine/Main1011.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
         </state>
       </provider>
     </entry>
