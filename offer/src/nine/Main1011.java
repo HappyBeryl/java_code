@@ -30,7 +30,7 @@ public class Main1011 {
             System.out.println(max);
         }
     }
-    
+
     public static void main1(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
