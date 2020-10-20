@@ -1,4 +1,4 @@
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
+
 
 //定义节点
 class ListNode {
@@ -53,7 +53,6 @@ class SingleList {
         }
      }
 
-//     //任意位置插入,第一个数据节点为0号下标
 //    //获取链表长度
     private int getLength() {
         ListNode cur = this.head;
@@ -106,8 +105,8 @@ class SingleList {
             }
             return false;
         }
+		
      //删除第一次出现关键字为key的节点
-    //找前驱
     public ListNode getPrevNode(int key) {
         ListNode cur = this.head;
         while (cur != null) {
