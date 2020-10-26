@@ -126,8 +126,8 @@
       <file leaf-file-name="TreeNode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/TreeNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="63" column="4" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
+            <state relative-caret-position="164">
+              <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -219,7 +219,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-393" />
     <option name="y" value="-12" />
     <option name="width" value="1944" />
@@ -453,15 +453,15 @@
       <workItem from="1597022015755" duration="11390000" />
       <workItem from="1599532114012" duration="1534000" />
       <workItem from="1600239124984" duration="1757000" />
-      <workItem from="1603354658009" duration="3452000" />
+      <workItem from="1603354658009" duration="4120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229091000" />
+    <option name="totallyTimeSpent" value="229759000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -834,8 +834,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/TreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="63" column="4" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
+        <state relative-caret-position="164">
+          <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
         </state>
       </provider>
     </entry>
